@@ -1,0 +1,48 @@
+﻿﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<UserAccount> signInManager;
+   <div class="acc-action-container">
+    @if (signInManager.IsSignedIn(User))
+    {
+        <a class="btn-logout" asp-controller="Account" asp-action="Logout">Đăng xuất</a>
+    }
+    else
+    {
+        <a class="btn-login" asp-controller="Account" asp-action="Login">Đăng nhập</a>
+        <a class="btn-register" asp-controller="Account" asp-action="Register">Đăng ký</a>
+    }
+    </div>
+
+    <style>
+        .acc-action-container {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+            .acc-action-container a {
+                text-decoration: none;
+                padding: 10px 15px;
+                border-radius: 5px;
+                display: block;
+            }
+
+    .btn-register, .btn-register:hover{
+                color:black;
+            }
+        .btn-login {
+            background-color: #e52c2c;
+            color: #fff;
+            transform:translateY(0%);
+        transition: transform 0.2s ease;
+        }
+        .btn-login:hover{
+            color:#fff;
+            opacity: 0.8;
+            transform: translateY(-8%);
+        }
+
+    </style>
+
+
+
+  

@@ -1,10 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace CustomShirtStore.Models;
 
-public partial class Exe201Context : DbContext
+public partial class Exe201Context : IdentityDbContext<
+    UserAccount, Role, long,
+    IdentityUserClaim<long>,
+    IdentityUserRole<long>,
+    IdentityUserLogin<long>,
+    IdentityRoleClaim<long>,
+    IdentityUserToken<long>>
 {
     public Exe201Context()
     {
@@ -43,7 +51,7 @@ public partial class Exe201Context : DbContext
             entity.ToTable("CustomerDesign");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.BackDesign)
                 .HasMaxLength(255)
@@ -64,7 +72,7 @@ public partial class Exe201Context : DbContext
             entity.HasKey(e => e.Id).HasName("fonts_id_primary");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
@@ -88,7 +96,7 @@ public partial class Exe201Context : DbContext
             entity.ToTable("Order");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
@@ -131,7 +139,7 @@ public partial class Exe201Context : DbContext
             entity.ToTable("OrderItem");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.FemaleName)
                 .HasMaxLength(255)
@@ -177,26 +185,33 @@ public partial class Exe201Context : DbContext
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("role_id_primary");
-
             entity.ToTable("Role");
 
+            entity.HasKey(e => e.Id).HasName("role_id_primary");
+
+
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.Name)
                 .HasMaxLength(255)
                 .HasColumnName("name");
+
+            entity.Property(e => e.NormalizedName)
+                .HasMaxLength(255)
+                .HasColumnName("normalized_name");
+            entity.Property(e => e.ConcurrencyStamp)
+                .HasColumnName("concurrency_stamp");
         });
 
         modelBuilder.Entity<UserAccount>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("useraccount_id_primary");
-
             entity.ToTable("UserAccount");
 
+            entity.HasKey(e => e.Id).HasName("useraccount_id_primary");
+
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.Address).HasColumnName("address");
             entity.Property(e => e.CreatedAt)
@@ -223,13 +238,112 @@ public partial class Exe201Context : DbContext
             entity.Property(e => e.UpdatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnName("updatedAt");
+            // Add Identity specific properties
+            entity.Property(e => e.UserName)
+                .HasMaxLength(255)
+                .HasColumnName("user_name");
 
+            entity.Property(e => e.NormalizedUserName)
+                .HasMaxLength(255)
+                .HasColumnName("normalized_user_name");
+
+            entity.Property(e => e.NormalizedEmail)
+                .HasMaxLength(255)
+                .HasColumnName("normalized_email");
+
+            entity.Property(e => e.EmailConfirmed)
+                .HasColumnName("email_confirmed")
+                .HasDefaultValue(false);
+
+            entity.Property(e => e.PasswordHash)
+                .HasMaxLength(255)
+                .HasColumnName("password_hash");
+
+            entity.Property(e => e.SecurityStamp)
+                .HasMaxLength(255)
+                .HasColumnName("security_stamp");
+
+            entity.Property(e => e.ConcurrencyStamp)
+                .HasMaxLength(255)
+                .HasColumnName("concurrency_stamp");
+
+            entity.Property(e => e.PhoneNumberConfirmed)
+                .HasColumnName("phone_number_confirmed")
+                .HasDefaultValue(false);
+
+            entity.Property(e => e.TwoFactorEnabled)
+                .HasColumnName("two_factor_enabled")
+                .HasDefaultValue(false);
+
+            entity.Property(e => e.LockoutEnd)
+                .HasColumnName("lockout_end");
+
+            entity.Property(e => e.LockoutEnabled)
+                .HasColumnName("lockout_enabled")
+                .HasDefaultValue(false);
+
+            entity.Property(e => e.AccessFailedCount)
+                .HasColumnName("access_failed_count")
+                .HasDefaultValue(0);
             entity.HasOne(d => d.Role).WithMany(p => p.UserAccounts)
                 .HasForeignKey(d => d.RoleId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("useraccount_role_id_foreign");
         });
+         // Configure Identity related tables
+        modelBuilder.Entity<IdentityUserClaim<long>>(entity =>
+        {
+            entity.ToTable("UserClaims");
+            
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.UserId).HasColumnName("user_id");
+            entity.Property(e => e.ClaimType).HasColumnName("claim_type");
+            entity.Property(e => e.ClaimValue).HasColumnName("claim_value");
+        });
 
+        modelBuilder.Entity<IdentityUserRole<long>>(entity =>
+        {
+            entity.ToTable("UserRoles");
+            
+            entity.HasKey(e => new { e.UserId, e.RoleId });
+            
+            entity.Property(e => e.UserId).HasColumnName("user_id");
+            entity.Property(e => e.RoleId).HasColumnName("role_id");
+        });
+
+        modelBuilder.Entity<IdentityUserLogin<long>>(entity =>
+        {
+            entity.ToTable("UserLogins");
+            
+            entity.HasKey(e => new { e.LoginProvider, e.ProviderKey });
+            
+            entity.Property(e => e.LoginProvider).HasColumnName("login_provider");
+            entity.Property(e => e.ProviderKey).HasColumnName("provider_key");
+            entity.Property(e => e.ProviderDisplayName).HasColumnName("provider_display_name");
+            entity.Property(e => e.UserId).HasColumnName("user_id");
+        });
+
+        modelBuilder.Entity<IdentityRoleClaim<long>>(entity =>
+        {
+            entity.ToTable("RoleClaims");
+            
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.RoleId).HasColumnName("role_id");
+            entity.Property(e => e.ClaimType).HasColumnName("claim_type");
+            entity.Property(e => e.ClaimValue).HasColumnName("claim_value");
+        });
+
+        modelBuilder.Entity<IdentityUserToken<long>>(entity =>
+        {
+            entity.ToTable("UserTokens");
+            
+            entity.HasKey(e => new { e.UserId, e.LoginProvider, e.Name });
+            
+            entity.Property(e => e.UserId).HasColumnName("user_id");
+            entity.Property(e => e.LoginProvider).HasColumnName("login_provider");
+            entity.Property(e => e.Name).HasColumnName("name");
+            entity.Property(e => e.Value).HasColumnName("value");
+        });
         OnModelCreatingPartial(modelBuilder);
     }
 
