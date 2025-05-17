@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using CustomShirtStore.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CustomShirtStore.Controllers
@@ -18,7 +19,20 @@ namespace CustomShirtStore.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [Authorize(Roles ="Admin")]
+        public IActionResult Admin()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "Customer")]
+        public IActionResult User()
         {
             return View();
         }

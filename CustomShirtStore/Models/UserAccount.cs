@@ -1,21 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Microsoft.AspNetCore.Identity;
 namespace CustomShirtStore.Models;
 
-public partial class UserAccount
+public partial class UserAccount : IdentityUser<long>
 {
-    public long Id { get; set; }
+    // Keep your existing properties
+    // (Some of these will override IdentityUser base properties)
+    // public long Id { get; set; } - This is already in IdentityUser<long> as Id
+    // public string Email { get; set; } = null!; - Already in IdentityUser
+    // public string PhoneNumber { get; set; } = null!; - Already in IdentityUser
 
-    public string Email { get; set; } = null!;
-
-    public string Password { get; set; } = null!;
+    public string Password { get; set; }
 
     public long Address { get; set; }
 
-    public string Provider { get; set; } = null!;
+    public string Provider { get; set; }
 
-    public string ProviderId { get; set; } = null!;
+    public string ProviderId { get; set; }
 
     public long RoleId { get; set; }
 
@@ -25,7 +27,7 @@ public partial class UserAccount
 
     public bool IsActive { get; set; }
 
-    public string PhoneNumber { get; set; } = null!;
+   
 
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
