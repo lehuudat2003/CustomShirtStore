@@ -37,6 +37,36 @@ namespace CustomShirtStore.Controllers
             return View();
         }
 
+        public IActionResult BangMauAo()
+        {
+            return View();
+        }
+
+        public IActionResult CachChonSizeAo()
+        {
+            return View();
+        }
+
+        public IActionResult CachThucThanhToan()
+        {
+            return View();
+        }
+
+        public IActionResult CongNgheIn()
+        {
+            return View();
+        }
+
+        public IActionResult CauHoi()
+        {
+            return View();
+        }
+
+        public IActionResult LienHe()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

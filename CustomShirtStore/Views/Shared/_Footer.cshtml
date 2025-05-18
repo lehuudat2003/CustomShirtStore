@@ -23,10 +23,10 @@
                 </div>
             <div class="col-md-3">
                 <h5>Thông tin</h5>
-                <a href="#">Cách chọn size áo</a>
-                <a href="#">Cách thức thanh toán</a>
-                <a href="#">Công nghệ in</a>
-                <a href="#">Bảng màu áo</a>
+                <a href="@Url.Action("CachChonSizeAo","Home")">Cách chọn size áo</a>
+                <a href="@Url.Action("CachThucThanhToan","Home")">Cách thức thanh toán</a>
+                <a href="@Url.Action("CongNgheIn","Home")">Công nghệ in</a>
+                <a href="@Url.Action("BangMauAo","Home")">Bảng màu áo</a>
             </div>
             <div class="col-md-3">
                 <h5>Bỏ lỡ cập nhật?</h5>
@@ -50,6 +50,7 @@
     }
     footer h5:hover{
             color: var(--bg-primary);
+            cursor: pointer;
     }
 
         footer a {

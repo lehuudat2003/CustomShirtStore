@@ -18,7 +18,7 @@
             z-index:10;
         }
         .main-body{
-            margin-top: 120px;
+            margin-top: 140px;
         }
         .header-above{
             background-color:white;  
@@ -41,9 +41,9 @@
                 <div class="">
                     <i class="fa-solid fa-phone"></i>&nbsp;0909 999 999
                     &nbsp;-&nbsp;
-                    <i class="fa-brands fa-square-facebook"></i>&nbsp;<a href="https://www.facebook.com/CustomShirtStore" target="_blank">fb/happy.vn</a>
+                    <i class="fa-brands fa-square-facebook"></i>&nbsp;<a style="color:var(--bg-primary);" href="https://www.facebook.com/CustomShirtStore" target="_blank">fb/happy.vn</a>
                     &nbsp;-&nbsp;
-                    <i class="fa-brands fa-square-instagram"></i>&nbsp;<a href="#" target="_blank">ig/happy.vn</a>
+                    <i class="fa-brands fa-square-instagram"></i>&nbsp;<a style="color:var(--bg-primary);" href="#" target="_blank">ig/happy.vn</a>
                 </div>
                 <partial name="_LoginPartial" />
             </div>
@@ -71,18 +71,17 @@
                                 Thông tin
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item text-black" href="#">Bảng màu áo</a></li>
-                                <li><a class="dropdown-item text-black" href="#">Cách chọn size áo</a></li>
-                                <li><a class="dropdown-item text-black" href="#">Cách thức thanh toán</a></li>
-                                <li><a class="dropdown-item text-black" href="#">Công nghệ in</a></li>
-                                <li><a class="dropdown-item text-black" href="#">Kho ảnh</a></li>
+                                <li><a class="dropdown-item text-black" href="@Url.Action("BangMauAo","Home")">Bảng màu áo</a></li>
+                                <li><a class="dropdown-item text-black" href="@Url.Action("CachChonSizeAo","Home")">Cách chọn size áo</a></li>
+                                <li><a class="dropdown-item text-black" href="@Url.Action("CachThucThanhToan","Home")">Cách thức thanh toán</a></li>
+                                <li><a class="dropdown-item text-black" href="@Url.Action("CongNgheIn","Home")">Công nghệ in</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">FAQ</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="CauHoi">FAQ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Liên hệ</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="LienHe">Liên hệ</a>
                         </li>
 
                         @if (User.IsInRole("Admin"))
@@ -103,7 +102,7 @@
         </nav>
     </header>
     <div class="container-fluid main-body">
-        <main role="main" class="">
+        <main role="main" class="mt-2">
             @RenderBody()
         </main>
     </div>
