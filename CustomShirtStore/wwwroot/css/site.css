@@ -1,5 +1,6 @@
 html {
   font-size: 14px;
+  overflow-x:hidden;
 }
 
 @media (min-width: 768px) {
@@ -14,3 +15,8 @@ html {
 
 
 
+:root {
+    --bg-primary: #E52C2C;
+    --bg-second-primary: #e92ace ;
+    --bg-secondary:#F6E6E8;
+}

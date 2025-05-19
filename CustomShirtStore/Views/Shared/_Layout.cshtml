@@ -7,34 +7,46 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CustomShirtStore.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         header{
-            border-bottom: 1px solid #E52C2C;
+            border-bottom: 1px solid var(--bg-primary);
            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 30px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
             position: fixed;
             top: 0;
             width:100vw;
+            z-index:10;
         }
         .main-body{
-            margin-top: 80px;
+            margin-top: 140px;
         }
         .header-above{
-            background-color:white;            
-            height: 70px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            background-color:white;  
+            
+        }
+        .header-above>div{
+                width: 100vw;
+                height: 70px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
         }
     </style>
     @RenderSection("Styles", required: false)
 </head>
 <body>
     <header>
-        <div class="container header-above">
-            <div>
-                Content bên trái
+        <div class="header-above">
+            <div class="container">
+                <div class="">
+                    <i class="fa-solid fa-phone"></i>&nbsp;0909 999 999
+                    &nbsp;-&nbsp;
+                    <i class="fa-brands fa-square-facebook"></i>&nbsp;<a style="color:var(--bg-primary);" href="https://www.facebook.com/CustomShirtStore" target="_blank">fb/happy.vn</a>
+                    &nbsp;-&nbsp;
+                    <i class="fa-brands fa-square-instagram"></i>&nbsp;<a style="color:var(--bg-primary);" href="#" target="_blank">ig/happy.vn</a>
+                </div>
+                <partial name="_LoginPartial" />
             </div>
-            <partial name="_LoginPartial" />
         </div>
         <nav class="navbar navbar-expand-md navbar-toggleable-sm navbar-light bg-white border-bottom border-top">
             <div class="container">
@@ -54,8 +66,22 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Gửi lời chúc</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Thông tin
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item text-black" href="@Url.Action("BangMauAo","Home")">Bảng màu áo</a></li>
+                                <li><a class="dropdown-item text-black" href="@Url.Action("CachChonSizeAo","Home")">Cách chọn size áo</a></li>
+                                <li><a class="dropdown-item text-black" href="@Url.Action("CachThucThanhToan","Home")">Cách thức thanh toán</a></li>
+                                <li><a class="dropdown-item text-black" href="@Url.Action("CongNgheIn","Home")">Công nghệ in</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Liên hệ</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="CauHoi">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="LienHe">Liên hệ</a>
                         </li>
 
                         @if (User.IsInRole("Admin"))
@@ -75,17 +101,13 @@
             </div>
         </nav>
     </header>
-    <div class="container main-body">
-        <main role="main" class="pb-3">
+    <div class="container-fluid main-body">
+        <main role="main" class="mt-2">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="">
-        <div class="container">
-            &copy; 2025 - CustomShirtStore - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    <partial name="_Footer" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

@@ -1,0 +1,138 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Những Câu Hỏi Thường Gặp";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Những câu hỏi thường gặp</h2>
+
+    <div class="accordion" id="faqAccordion">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                    Chất lượng hình in tại Happy.vn như thế nào? Hình in có bị phai màu, bong tróc sau khi sử dụng?
+                </button>
+            </h2>
+            <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Happy.vn sử dụng nhiều công nghệ in với chất lượng và độ bền khác nhau tùy theo đơn hàng.
+                    Bạn có thể tham khảo thêm tại trang <a href="/CongNgheIn">Công nghệ in</a>.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                    Tôi muốn đặt áo nhưng chưa biết cách thức thanh toán? Tôi có thể xem tại đâu?
+                </button>
+            </h2>
+            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Quý khách có thể tham khảo chi tiết tại mục <a href="/CachThucThanhToan">Cách thức thanh toán</a>.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                    Áo mua tại Happy.vn có được bảo hành không?
+                </button>
+            </h2>
+            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Nếu sản phẩm không đúng yêu cầu, chúng tôi sẽ đổi mới hoàn toàn miễn phí.
+                    Thời gian xử lý trong vòng 7 ngày kể từ ngày nhận hàng.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                    Tôi muốn làm áo nhưng không biết thiết kế thì phải làm sao?
+                </button>
+            </h2>
+            <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Quý khách có thể yêu cầu hỗ trợ tại trang <a href="/HoTroThietKe">Hỗ trợ thiết kế</a>.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading5">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
+                    Sau khi đặt áo bao lâu tôi sẽ nhận được?
+                </button>
+            </h2>
+            <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    <ul>
+                        <li>Đơn < 10 áo: Giao hàng từ 4–7 ngày (không tính Thứ 7, CN).</li>
+                        <li>Đơn 10–100 áo: Thời gian sản xuất 7–10 ngày.</li>
+                        <li>Đơn > 100 áo: Thời gian sản xuất 10–15 ngày.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading6">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6">
+                    Sau ngày hẹn vẫn chưa nhận được áo, tôi phải làm sao?
+                </button>
+            </h2>
+            <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Quý khách vui lòng liên hệ 0938 807 996 hoặc nhắn qua fanpage
+                    <a href="https://www.facebook.com/gecko.vn" target="_blank">facebook.com/gecko.vn</a> để được hỗ trợ kiểm tra.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading7">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7">
+                    Khi người giao áo đến tôi không có ở nhà thì phải làm thế nào?
+                </button>
+            </h2>
+            <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    <ul>
+                        <li><strong>Tại TP.HCM:</strong> Nhân viên sẽ gọi hẹn trước, có thể dời lịch nếu bạn bận.</li>
+                        <li><strong>Tỉnh thành khác:</strong> Sử dụng dịch vụ bưu điện, nếu không có người nhận, hàng sẽ được chuyển về bưu cục địa phương để bạn đến nhận.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .accordion-button {
+        color: var(--bg-primary);
+    }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #fceaea; /* optional: light background for active */
+            color: var(--bg-primary);
+        }
+
+    .accordion-body a {
+        color: var(--bg-primary);
+        text-decoration: underline;
+    }
+
+        .accordion-body a:hover {
+            color: var(--bg-primary);
+        }
+</style>
+
