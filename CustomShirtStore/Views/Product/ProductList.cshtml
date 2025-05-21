@@ -1,0 +1,30 @@
+﻿@model List<CustomShirtStore.Models.Product>
+
+@{
+    ViewData["Title"] = "Danh sách Áo Thun";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row form-container">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm">
+                <img src="@Url.Content(item.ImageUrl.StartsWith("/") ? "~" + item.ImageUrl : "~/images/products/" + item.ImageUrl)" class="card-img-top" alt="@item.ProductName" />
+
+
+                
+                <div class="card-body">
+                    <h5 class="card-title">@item.ProductName</h5>
+                    <p class="card-text">@item.Description</p>
+                    <p><strong>Màu:</strong> @item.Color</p>
+                    <p><strong>Giá:</strong> @item.BasePrice.ToString("N0") ₫</p>
+                    <a asp-controller="Design" asp-action="Index" asp-route-productId="@item.ProductId" class="btn btn-primary">Thiết kế ngay</a>
+
+
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,42 @@
+﻿@* @model CustomShirtStore.Models.DesignShirtViewModel *@
+@using CustomShirtStore.ViewModels;
+@model DesignShirtViewModel;
+@{
+    ViewBag.Title = "Thiết kế áo thun";
+    var products = ViewBag.Products as List<CustomShirtStore.Models.Product>;
+}
+
+<h2>Thiết kế áo thun</h2>
+<div class="form-container">
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div>
+        <label>Chọn phôi áo</label>
+        <select asp-for="ProductId" class="form-control">
+            @foreach (var product in products)
+            {
+                <option value="@product.ProductId">@product.ProductName - @product.Color</option>
+            }
+        </select>
+    </div>
+
+    <div>
+        <label asp-for="DesignName"></label>
+        <input asp-for="DesignName" class="form-control" />
+        <span asp-validation-for="DesignName" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="DesignImage"></label>
+        <input asp-for="DesignImage" type="file" class="form-control" />
+        <span asp-validation-for="DesignImage" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Lưu thiết kế</button>
+</form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

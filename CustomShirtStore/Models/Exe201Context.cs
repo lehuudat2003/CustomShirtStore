@@ -31,6 +31,8 @@ public partial class Exe201Context : IdentityDbContext<
 
     public virtual DbSet<OrderItem> OrderItems { get; set; }
 
+    public virtual DbSet<Product> Products { get; set; }
+
     public virtual DbSet<Role> Roles { get; set; }
 
     public virtual DbSet<UserAccount> UserAccounts { get; set; }
@@ -53,19 +55,49 @@ public partial class Exe201Context : IdentityDbContext<
             entity.Property(e => e.Id)
                 .ValueGeneratedOnAdd()
                 .HasColumnName("id");
-            entity.Property(e => e.BackDesign)
-                .HasMaxLength(255)
-                .HasColumnName("backDesign");
-            entity.Property(e => e.FrontDesign)
-                .HasMaxLength(255)
-                .HasColumnName("frontDesign");
-            entity.Property(e => e.OrderItemId).HasColumnName("orderItemId");
 
-            entity.HasOne(d => d.OrderItem).WithMany(p => p.CustomerDesigns)
-                .HasForeignKey(d => d.OrderItemId)
+            entity.Property(e => e.UserId)
+                .HasMaxLength(255)
+                .HasColumnName("userId");
+
+            entity.Property(e => e.ProductId)
+                .HasColumnName("productId");
+
+            entity.Property(e => e.DesignImageUrl)
+                .HasMaxLength(255)
+                .HasColumnName("designImageUrl");
+
+            entity.Property(e => e.Color)
+                .HasMaxLength(50)
+                .HasColumnName("color");
+
+            entity.Property(e => e.Text)
+                .HasMaxLength(500)
+                .HasColumnName("text");
+
+            entity.Property(e => e.UploadedImagePath)
+                .HasMaxLength(255)
+                .HasColumnName("uploadedImagePath");
+
+            entity.Property(e => e.Size)
+                .HasMaxLength(20)
+                .HasColumnName("size");
+
+            entity.Property(e => e.Price)
+                .HasColumnType("decimal(18,2)")
+                .HasColumnName("price");
+
+            entity.Property(e => e.CreatedAt)
+                .HasColumnName("createdAt");
+
+            entity.HasOne(d => d.Product)
+                .WithMany(p => p.CustomerDesigns)
+                .HasForeignKey(d => d.ProductId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("customerdesign_orderitemid_foreign");
+                .HasConstraintName("customerdesign_productid_foreign");
         });
+
+
 
         modelBuilder.Entity<Font>(entity =>
         {
@@ -182,6 +214,49 @@ public partial class Exe201Context : IdentityDbContext<
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("orderitem_orderid_foreign");
         });
+
+        modelBuilder.Entity<Product>(entity =>
+        {
+            entity.HasKey(e => e.ProductId).HasName("product_id_primary");
+
+            entity.ToTable("Product");
+
+            entity.Property(e => e.ProductId)
+                .ValueGeneratedOnAdd()
+                .HasColumnName("productId");
+
+            entity.Property(e => e.ProductName)
+                .HasMaxLength(255)
+                .IsRequired()
+                .HasColumnName("productName");
+
+            entity.Property(e => e.Description)
+                .HasMaxLength(1000)
+                .HasColumnName("description");
+
+            entity.Property(e => e.BasePrice)
+                .HasColumnType("decimal(18, 2)")
+                .HasColumnName("basePrice");
+
+            entity.Property(e => e.Quantity)
+                .HasColumnName("quantity");
+
+            entity.Property(e => e.Color)
+                .HasMaxLength(100)
+                .HasColumnName("color");
+
+            entity.Property(e => e.ImageUrl)
+                .HasMaxLength(255)
+                .HasColumnName("imageUrl");
+
+            entity.Property(e => e.Category)
+                .HasMaxLength(255)
+                .HasColumnName("category");
+
+            entity.Property(e => e.IsActive)
+                .HasColumnName("isActive");
+        });
+
 
         modelBuilder.Entity<Role>(entity =>
         {

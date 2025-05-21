@@ -104,4 +104,6 @@ static async Task SeedRolesAsync(IServiceProvider serviceProvider)
         }
     }
 }
+app.UseStaticFiles();
+
 app.Run();
