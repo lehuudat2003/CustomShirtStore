@@ -1,0 +1,366 @@
+﻿@model ShirtDesignViewModel
+@using CustomShirtStore.ViewModels;
+
+@{
+    ViewData["Title"] = "Ứng Dụng Thiết Kế";
+}
+<h2 class="text-center text-primary">Ứng Dụng Thiết Kế</h2>
+
+<form asp-action="SaveDesign" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Design.ProductId" value="@Model.Product.ProductId" />
+
+    <div class="row">
+        @* <img id="shirtImage" src="~/images/products/@Model.AvailableColors.FirstOrDefault()-shirt.jpg" alt="Shirt" class="img-fluid" style="max-width: 300px;" /> *@
+        <div class="col-md-3">
+            <div class="mt-3">
+                <label>Chọn Màu:</label>
+                <div class="d-flex flex-wrap">
+                    @foreach (var color in Model.AvailableColors)
+                    {
+                        var slugColor = color.ToLower().Trim(); 
+
+                        <label class="me-3">
+                            <input type="radio" name="colorOption" value="@slugColor" @(color == Model.AvailableColors.First() ? "checked" : "") />
+                            <span style="display:inline-block;width:25px;height:25px;border:1px solid #000; background-color:@slugColor"></span>
+                        </label>
+                    }
+
+                </div>
+            </div>
+
+            <hr />
+            @* <button type="button" class="btn btn-primary mt-2" onclick="addText()">Thêm chữ</button> *@
+           
+            <button type="button" class="btn btn-primary mt-2" onclick="openPopup()">➕ Thêm chữ</button>
+
+          
+            <div id="textPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup()">&times;</span>
+                    <h5>Sửa chữ</h5>
+                    <label for="textContentInput">Nội dung chữ:</label>
+                    <input type="text" id="textContentInput" class="form-control" placeholder="Nhập chữ...">
+                    <label for="fontSelect">Font chữ:</label>
+                    <select id="fontSelect" class="form-control">
+                        <option value="Arial">Arial</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Impact">Impact</option>
+                    </select>
+                    <label for="fontColorInput">Màu chữ:</label>
+                    <input type="color" id="fontColorInput" value="#000000">
+
+                    <div class="mb-2 d-flex gap-3">
+                        <label for="text">Kiểu chữ:</label>
+                        <div>
+                            <input type="checkbox" id="boldToggle" />
+                            <label for="boldToggle">In đậm</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="italicToggle" />
+                            <label for="italicToggle">Nghiêng</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="underlineToggle" />
+                            <label for="underlineToggle">Gạch chân</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="outlineSize">Viền chữ:</label>
+                        <input type="number" id="outlineSize" class="form-control" value="0" min="0" max="10" />
+                        <label for="outlineColor">Màu viền:</label>
+                        <input type="color" id="outlineColor" class="form-control" value="#000000" />
+                    </div>
+
+                    <div class="mb-2 d-flex gap-2">
+                        <label for="textWidth">Chiều ngang:</label>
+                        <input type="number" id="textWidth" class="form-control" value="55" />
+                        <label for="textHeight">Chiều cao:</label>
+                        <input type="number" id="textHeight" class="form-control" value="24" />
+                        <label for="textRotation">Xoay:</label>
+                        <input type="number" id="textRotation" class="form-control" value="0" />
+                    </div>
+
+                    <div class="mb-2 d-flex gap-2">
+                        <button type="button" class="btn btn-secondary">Lật</button>
+                        <button type="button" class="btn btn-secondary">Giữa</button>
+                    </div>
+
+                    <button type="button" class="btn btn-success mt-2" onclick="addText()">Thêm vào áo</button>
+
+                </div>
+            </div>
+
+            <style>
+                .popup {
+                    display: none;
+                    position: fixed;
+                    z-index: 1000;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.4);
+                }
+
+                .popup-content {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background-color: white;
+                    padding: 20px;
+                    border-radius: 8px;
+                }
+
+                .close {
+                    position: absolute;
+                    top: 5px;
+                    right: 10px;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+            </style>
+
+
+            <hr />
+            <label>Upload ảnh:</label>
+              <input type="file" id="uploadImage" accept="image/*" class="form-control mt-2" />
+
+            <hr />
+            <label>Icon:</label>
+            @* <input type="file" name="uploadedImage" class="form-control" /> *@
+            <button type="button" class="btn btn-info mt-2" onclick="openIconModal()">🖼️ Chọn ảnh từ Icon</button>
+            <div class="modal" id="iconModal" style="display:none; position:fixed; z-index:2000; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.5);">
+                <div style="background:#fff; width:80%; max-height:80%; overflow:auto; margin:50px auto; padding:20px; border-radius:10px; position:relative;">
+                    <span style="position:absolute; top:10px; right:20px; cursor:pointer; font-size:24px;" onclick="closeIconModal()">&times;</span>
+                    <h4>Chọn Icon để thêm vào áo</h4>
+                    <div class="row" id="iconGallery"></div>
+                </div>
+            </div>
+
+            <hr />
+            <label>Size áo:</label>
+            <select name="Design.Size" class="form-control">
+                @foreach (var size in Model.Sizes)
+                {
+                    <option value="@size">@size</option>
+                }
+            </select>
+        </div>
+
+        <div class="col-md-6 text-center">
+            <div style="position: relative; display: inline-block;">
+                <img id="shirtBase" src="@Model.Product.ImageUrl" style="width: 600px;" />
+                <canvas id="designCanvas" width="220" height="250"
+                        style="position: absolute; top: 0%; left: 0%;
+                       transform: translate(85%,-170%);
+                       border: 1px dashed gray; background: transparent;">
+                </canvas>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-3">
+            <h4>Thuộc tính áo</h4>
+            <p><b>Tên sản phẩm:</b> @Model.Product.ProductName</p>
+            <p><b>Giá:</b> @Model.Product.BasePrice.ToString("N0") ₫</p>
+
+            <h4>Tổng cộng:</h4>
+            <p><b>Tổng tiền:</b> @Model.Product.BasePrice.ToString("N0") ₫</p>
+
+            <button type="submit" class="btn btn-warning mt-2">🛒 Thêm vào giỏ</button>
+        </div>
+        <button type="button" class="btn btn-outline-primary mt-3" onclick="exportFullShirtImage()">📤 Xuất ảnh thiết kế</button>
+
+    </div>
+</form>
+
+@* @section Scripts { *@
+@*     <script> *@
+@*         function rotateShirt() { *@
+@*             const img = document.getElementById("shirt-preview"); *@
+@*             img.style.transform = img.style.transform === "rotateY(180deg)" ? "rotateY(0deg)" : "rotateY(180deg)"; *@
+@*         } *@
+@*     </script> *@
+
+@* } *@
+
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
+    <script>
+
+        const canvas = new fabric.Canvas('designCanvas', {
+            backgroundColor: 'transparent',
+            preserveObjectStacking: true
+        });
+                function openIconModal() {
+            fetch('/images/icons-list')
+                .then(response => response.json())
+                .then(data => {
+                    const gallery = document.getElementById('iconGallery');
+                    gallery.innerHTML = '';
+                    data.forEach(file => {
+                        const col = document.createElement('div');
+                        col.className = 'col-md-2 mb-3';
+                        col.innerHTML = `
+                            <img src="/images/Icon/${file}" style="width:100%;cursor:pointer;border:2px solid #ccc;" onclick="addIconToCanvas('/images/Icon/${file}')"/>
+                        `;
+                        gallery.appendChild(col);
+                    });
+                    document.getElementById('iconModal').style.display = 'block';
+                });
+        }
+
+        function closeIconModal() {
+            document.getElementById('iconModal').style.display = 'none';
+        }
+
+        function addIconToCanvas(imgUrl) {
+            fabric.Image.fromURL(imgUrl, function (img) {
+                img.scaleToWidth(100);
+                img.scaleToHeight(100);
+                img.set({ left: 30, top: 30 });
+                canvas.add(img);
+            });
+            closeIconModal();
+        }
+
+        function rotateShirt() {
+            const img = document.getElementById("shirtBase");
+            img.style.transform = img.style.transform === "rotateY(180deg)" ? "rotateY(0deg)" : "rotateY(180deg)";
+        }
+
+                 function openPopup() {
+            document.getElementById("textPopup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("textPopup").style.display = "none";
+        }
+
+        function addText() {
+            const content = document.getElementById('textContentInput').value || 'Văn bản';
+            const font = document.getElementById('fontSelect').value;
+            const color = document.getElementById('fontColorInput').value;
+            const isBold = document.getElementById('boldToggle').checked;
+            const isItalic = document.getElementById('italicToggle').checked;
+            const isUnderline = document.getElementById('underlineToggle').checked;
+            const outlineSize = parseInt(document.getElementById('outlineSize').value) || 0;
+            const outlineColor = document.getElementById('outlineColor').value;
+            const width = parseInt(document.getElementById('textWidth').value) || 55;
+            const height = parseInt(document.getElementById('textHeight').value) || 24;
+            const rotation = parseInt(document.getElementById('textRotation').value) || 0;
+
+            const text = new fabric.IText(content, {
+                left: 10,
+                top: 10,
+                fontSize: 24,
+                fill: color,
+                fontFamily: font,
+                fontWeight: isBold ? 'bold' : 'normal',
+                fontStyle: isItalic ? 'italic' : 'normal',
+                underline: isUnderline,
+                stroke: outlineColor,
+                strokeWidth: outlineSize,
+                width: width,
+                height: height,
+                angle: rotation
+            });
+
+            canvas.add(text).setActiveObject(text);
+            closePopup();
+        }
+
+
+
+        document.getElementById('uploadImage').addEventListener('change', function (e) {
+            const reader = new FileReader();
+            reader.onload = function (f) {
+                fabric.Image.fromURL(f.target.result, function (img) {
+                    img.scaleToWidth(100);
+                    img.scaleToHeight(100);
+                    img.set({ left: 20, top: 20 });
+                    canvas.add(img);
+                });
+            };
+            reader.readAsDataURL(e.target.files[0]);
+        });
+
+        // Xử lý đổi màu áo
+        document.querySelectorAll('input[name="colorOption"]').forEach(radio => {
+            radio.addEventListener('change', function () {
+                const selectedColor = this.value;
+                document.getElementById('shirtBase').src = `/images/products/${selectedColor}-shirt.jpg`;
+            });
+        });
+    </script>
+    <script>
+               function exportCanvasImage() {
+            const dataURL = canvas.toDataURL({
+                format: 'png',
+                quality: 1.0
+            });
+
+            // Cách 1: Tải xuống trực tiếp
+            const link = document.createElement('a');
+            link.href = dataURL;
+            link.download = 'shirt-design.png';
+            link.click();
+
+            // Cách 2: Gửi về server (ví dụ dùng Ajax)
+            // fetch('/YourController/SaveDesignImage', {
+            //     method: 'POST',
+            //     body: JSON.stringify({ imageBase64: dataURL }),
+            //     headers: { 'Content-Type': 'application/json' }
+            // });
+        }
+
+        //full ảnh áo
+                function exportFullShirtImage() {
+            const shirtImage = document.getElementById("shirtBase");
+            const shirtCanvas = document.createElement("canvas");
+
+            // Cùng kích thước với áo (hoặc tùy chỉnh)
+            shirtCanvas.width = shirtImage.width;
+            shirtCanvas.height = shirtImage.height;
+
+            const ctx = shirtCanvas.getContext("2d");
+
+            // Vẽ áo trước
+            ctx.drawImage(shirtImage, 0, 0, shirtImage.width, shirtImage.height);
+
+            // Vẽ canvas thiết kế đè lên
+            const designImg = new Image();
+            designImg.onload = function () {
+                // Điều chỉnh vị trí theo vị trí canvas thật trên áo
+                      const canvasWidth = 220;
+        const canvasHeight = 250;
+
+        const designX = (shirtImage.width - canvasWidth) / 2;
+        const designY = (shirtImage.height - canvasHeight) / 2;
+
+        ctx.drawImage(designImg, designX, designY, canvasWidth, canvasHeight);
+
+
+                // Xuất ảnh
+                const fullImage = shirtCanvas.toDataURL("image/png");
+                const link = document.createElement("a");
+                link.href = fullImage;
+                link.download = "full-shirt-design.png";
+                link.click();
+            };
+            designImg.src = canvas.toDataURL("image/png");
+        }
+
+
+    </script>
+}
+
+
+
+

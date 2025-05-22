@@ -1,134 +1,102 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\PRN222\\CustomShirtStore\\",
+  "WorkspaceRootPath": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\views\\design\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\design\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\controllers\\designcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\controllers\\designcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\wwwroot\\css\\account.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\wwwroot\\css\\account.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\viewmodels\\shirtdesignviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\viewmodels\\shirtdesignviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\wwwroot\\images\\account-bg.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\wwwroot\\images\\account-bg.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\views\\home\\user.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\home\\user.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\views\\home\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\home\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\views\\shared\\_accountlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\shared\\_accountlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\models\\useraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\models\\useraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\models\\customerdesign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\models\\customerdesign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\models\\customerdesign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\views\\account\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\account\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\views\\design\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\design\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\viewmodels\\changepasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\models\\font.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\models\\font.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\viewmodels\\designshirtviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\viewmodels\\designshirtviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\views\\product\\productlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\product\\productlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\models\\exe201context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\models\\exe201context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\viewmodels\\verifyemailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\viewmodels\\verifyemailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\viewmodels\\changepasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\viewmodels\\changepasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\views\\message\\message.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\message\\message.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\views\\account\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\account\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\views\\account\\verifyemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\account\\verifyemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\controllers\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\controllers\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|e:\\prn222\\customshirtstore\\customshirtstore\\viewmodels\\verifyemailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\viewmodels\\verifyemailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|d:\\ki8\\exe202\\exe1\\customshirtstore\\customshirtstore\\migrations\\20250519031318_exe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB45F4EF-B323-44D5-BBA4-20FEC727C403}|CustomShirtStore\\CustomShirtStore.csproj|solutionrelative:customshirtstore\\migrations\\20250519031318_exe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -138,407 +106,296 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Login\\Login.cshtml",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\Login\\Login.cshtml",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Login\\Login.cshtml",
-              "RelativeToolTip": "CustomShirtStore\\Views\\Login\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-17T02:38:39.48Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "account-bg.jpg -  [English (United States)] - Bitmap [1920x1200, 24 bit, JPG]",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\wwwroot\\images\\account-bg.jpg",
-              "RelativeDocumentMoniker": "CustomShirtStore\\wwwroot\\images\\account-bg.jpg",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\wwwroot\\images\\account-bg.jpg -  [English (United States)] - Bitmap [1920x1200, 24 bit, JPG]",
-              "RelativeToolTip": "CustomShirtStore\\wwwroot\\images\\account-bg.jpg -  [English (United States)] - Bitmap [1920x1200, 24 bit, JPG]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2025-05-17T15:20:17.33Z",
-              "EditorCaption": " -  [English (United States)] - Bitmap [1920x1200, 24 bit, JPG]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "CustomShirtStore\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Views\\Design\\Index.cshtml",
+              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\Design\\Index.cshtml",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Views\\Design\\Index.cshtml",
+              "RelativeToolTip": "CustomShirtStore\\Views\\Design\\Index.cshtml",
+              "ViewState": "AgIAADIBAAAAAAAAAAAAAMkAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-17T02:45:11.769Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "site.css",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "CustomShirtStore\\wwwroot\\css\\site.css",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "CustomShirtStore\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-17T08:51:40.264Z",
+              "WhenOpened": "2025-05-19T04:21:09.569Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "account.css",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\wwwroot\\css\\account.css",
-              "RelativeDocumentMoniker": "CustomShirtStore\\wwwroot\\css\\account.css",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\wwwroot\\css\\account.css",
-              "RelativeToolTip": "CustomShirtStore\\wwwroot\\css\\account.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-17T08:51:40.68Z",
-              "EditorCaption": ""
+              "Title": "DesignController.cs",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Controllers\\DesignController.cs",
+              "RelativeDocumentMoniker": "CustomShirtStore\\Controllers\\DesignController.cs",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Controllers\\DesignController.cs",
+              "RelativeToolTip": "CustomShirtStore\\Controllers\\DesignController.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAYwDYAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T03:57:59.03Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "site.js",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\wwwroot\\js\\site.js",
-              "RelativeDocumentMoniker": "CustomShirtStore\\wwwroot\\js\\site.js",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\wwwroot\\js\\site.js",
-              "RelativeToolTip": "CustomShirtStore\\wwwroot\\js\\site.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-05-17T14:21:48.208Z",
-              "EditorCaption": ""
+              "DocumentIndex": 10,
+              "Title": "DesignShirtViewModel.cs",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\ViewModels\\DesignShirtViewModel.cs",
+              "RelativeDocumentMoniker": "CustomShirtStore\\ViewModels\\DesignShirtViewModel.cs",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\ViewModels\\DesignShirtViewModel.cs",
+              "RelativeToolTip": "CustomShirtStore\\ViewModels\\DesignShirtViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T03:57:11.413Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\Home\\Index.cshtml",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "CustomShirtStore\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAArAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "ProductList.cshtml",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Views\\Product\\ProductList.cshtml",
+              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\Product\\ProductList.cshtml",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Views\\Product\\ProductList.cshtml",
+              "RelativeToolTip": "CustomShirtStore\\Views\\Product\\ProductList.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-17T03:41:16.334Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Admin.cshtml",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Home\\Admin.cshtml",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\Home\\Admin.cshtml",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Home\\Admin.cshtml",
-              "RelativeToolTip": "CustomShirtStore\\Views\\Home\\Admin.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-17T04:25:07.015Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Home\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\Home\\Privacy.cshtml",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Home\\Privacy.cshtml",
-              "RelativeToolTip": "CustomShirtStore\\Views\\Home\\Privacy.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-17T04:25:14.871Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T03:44:13.736Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "User.cshtml",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Home\\User.cshtml",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\Home\\User.cshtml",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Home\\User.cshtml",
-              "RelativeToolTip": "CustomShirtStore\\Views\\Home\\User.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAGAAAAAAAAAA==",
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "CustomShirtStore\\Models\\Product.cs",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Models\\Product.cs",
+              "RelativeToolTip": "CustomShirtStore\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T03:10:39.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "CustomShirtStore\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "CustomShirtStore\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T03:42:36.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Font.cs",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Models\\Font.cs",
+              "RelativeDocumentMoniker": "CustomShirtStore\\Models\\Font.cs",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Models\\Font.cs",
+              "RelativeToolTip": "CustomShirtStore\\Models\\Font.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T03:09:20.653Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "CustomShirtStore\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-17T04:26:57.872Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T05:18:22.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomerDesign.cs",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Models\\CustomerDesign.cs",
+              "RelativeDocumentMoniker": "CustomShirtStore\\Models\\CustomerDesign.cs",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Models\\CustomerDesign.cs",
+              "RelativeToolTip": "CustomShirtStore\\Models\\CustomerDesign.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T03:06:21.121Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ShirtDesignViewModel.cs",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\ViewModels\\ShirtDesignViewModel.cs",
+              "RelativeDocumentMoniker": "CustomShirtStore\\ViewModels\\ShirtDesignViewModel.cs",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\ViewModels\\ShirtDesignViewModel.cs",
+              "RelativeToolTip": "CustomShirtStore\\ViewModels\\ShirtDesignViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T04:19:26.694Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "_LoginPartial.cshtml",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\Shared\\_LoginPartial.cshtml",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeToolTip": "CustomShirtStore\\Views\\Shared\\_LoginPartial.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Views\\Design\\Create.cshtml",
+              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\Design\\Create.cshtml",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Views\\Design\\Create.cshtml",
+              "RelativeToolTip": "CustomShirtStore\\Views\\Design\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-17T02:45:21.203Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T03:59:18.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "CustomShirtStore\\Models\\Order.cs",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Models\\Order.cs",
+              "RelativeToolTip": "CustomShirtStore\\Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T13:13:27.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ChangePassword.cshtml",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Views\\Account\\ChangePassword.cshtml",
+              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\Account\\ChangePassword.cshtml",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Views\\Account\\ChangePassword.cshtml",
+              "RelativeToolTip": "CustomShirtStore\\Views\\Account\\ChangePassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-19T03:59:34.381Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Program.cs",
+              "RelativeDocumentMoniker": "CustomShirtStore\\Program.cs",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Program.cs",
+              "RelativeToolTip": "CustomShirtStore\\Program.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAGwAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T04:01:29.126Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "LoginViewModel.cs",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\ViewModels\\LoginViewModel.cs",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\ViewModels\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "CustomShirtStore\\ViewModels\\LoginViewModel.cs",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\ViewModels\\LoginViewModel.cs",
               "RelativeToolTip": "CustomShirtStore\\ViewModels\\LoginViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T03:08:57.011Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "_AccountLayout.cshtml",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Shared\\_AccountLayout.cshtml",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\Shared\\_AccountLayout.cshtml",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Shared\\_AccountLayout.cshtml",
-              "RelativeToolTip": "CustomShirtStore\\Views\\Shared\\_AccountLayout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-17T03:33:50.275Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\_ViewImports.cshtml",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "CustomShirtStore\\Views\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-17T12:53:08.476Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "RegisterViewModel.cs",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\ViewModels\\RegisterViewModel.cs",
-              "RelativeDocumentMoniker": "CustomShirtStore\\ViewModels\\RegisterViewModel.cs",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\ViewModels\\RegisterViewModel.cs",
-              "RelativeToolTip": "CustomShirtStore\\ViewModels\\RegisterViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T03:35:41.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Program.cs",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Program.cs",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Program.cs",
-              "RelativeToolTip": "CustomShirtStore\\Program.cs",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAAAEQAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T04:00:27.06Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\appsettings.json",
-              "RelativeDocumentMoniker": "CustomShirtStore\\appsettings.json",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\appsettings.json",
-              "RelativeToolTip": "CustomShirtStore\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-17T07:26:55.925Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Controllers\\HomeController.cs",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "CustomShirtStore\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T03:40:31.689Z"
+              "WhenOpened": "2025-05-19T04:19:52.704Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Controllers\\AccountController.cs",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "CustomShirtStore\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAIsAAAAAAAAAAAA5wJcAAAAMAAAAAAAAAA==",
+              "Title": "ChangePasswordViewModel.cs",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\ViewModels\\ChangePasswordViewModel.cs",
+              "RelativeDocumentMoniker": "CustomShirtStore\\ViewModels\\ChangePasswordViewModel.cs",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\ViewModels\\ChangePasswordViewModel.cs",
+              "RelativeToolTip": "CustomShirtStore\\ViewModels\\ChangePasswordViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T02:38:43.925Z"
+              "WhenOpened": "2025-05-19T04:10:58.722Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "UserAccount.cs",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Models\\UserAccount.cs",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Models\\UserAccount.cs",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Models\\UserAccount.cs",
-              "RelativeToolTip": "CustomShirtStore\\Models\\UserAccount.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowB8AAABJAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "Exe201Context.cs",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Models\\Exe201Context.cs",
+              "RelativeDocumentMoniker": "CustomShirtStore\\Models\\Exe201Context.cs",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Models\\Exe201Context.cs",
+              "RelativeToolTip": "CustomShirtStore\\Models\\Exe201Context.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAswFQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T02:51:45.898Z"
+              "WhenOpened": "2025-05-19T03:06:27.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\ViewModels\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "CustomShirtStore\\ViewModels\\RegisterViewModel.cs",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\ViewModels\\RegisterViewModel.cs",
+              "RelativeToolTip": "CustomShirtStore\\ViewModels\\RegisterViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T04:11:01.371Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "VerifyEmailViewModel.cs",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\ViewModels\\VerifyEmailViewModel.cs",
+              "RelativeDocumentMoniker": "CustomShirtStore\\ViewModels\\VerifyEmailViewModel.cs",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\ViewModels\\VerifyEmailViewModel.cs",
+              "RelativeToolTip": "CustomShirtStore\\ViewModels\\VerifyEmailViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T04:11:02.11Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
-              "Title": "Role.cs",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Models\\Role.cs",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Models\\Role.cs",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Models\\Role.cs",
-              "RelativeToolTip": "CustomShirtStore\\Models\\Role.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T04:38:28.521Z"
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "CustomShirtStore\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-19T04:02:39.619Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 20,
-              "Title": "CustomerDesign.cs",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Models\\CustomerDesign.cs",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Models\\CustomerDesign.cs",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Models\\CustomerDesign.cs",
-              "RelativeToolTip": "CustomShirtStore\\Models\\CustomerDesign.cs",
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "CustomShirtStore\\Models\\ErrorViewModel.cs",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "CustomShirtStore\\Models\\ErrorViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T14:07:29.38Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\Account\\Login.cshtml",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "CustomShirtStore\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAAkAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-17T03:34:02.199Z"
+              "WhenOpened": "2025-05-19T03:56:00.311Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 21,
-              "Title": "ChangePassword.cshtml",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Account\\ChangePassword.cshtml",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\Account\\ChangePassword.cshtml",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Account\\ChangePassword.cshtml",
-              "RelativeToolTip": "CustomShirtStore\\Views\\Account\\ChangePassword.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAA0AAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-17T06:03:53.908Z"
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "CustomShirtStore\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "CustomShirtStore\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-19T03:44:46.417Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "ChangePasswordViewModel.cs",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\ViewModels\\ChangePasswordViewModel.cs",
-              "RelativeDocumentMoniker": "CustomShirtStore\\ViewModels\\ChangePasswordViewModel.cs",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\ViewModels\\ChangePasswordViewModel.cs",
-              "RelativeToolTip": "CustomShirtStore\\ViewModels\\ChangePasswordViewModel.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAQAAAAoAAAAAAAAAA==",
+              "DocumentIndex": 23,
+              "Title": "20250519031318_exe.cs",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Migrations\\20250519031318_exe.cs",
+              "RelativeDocumentMoniker": "CustomShirtStore\\Migrations\\20250519031318_exe.cs",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\Migrations\\20250519031318_exe.cs",
+              "RelativeToolTip": "CustomShirtStore\\Migrations\\20250519031318_exe.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T03:08:43.396Z"
+              "WhenOpened": "2025-05-19T03:13:18.496Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Message.cshtml",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Message\\Message.cshtml",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\Message\\Message.cshtml",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Message\\Message.cshtml",
-              "RelativeToolTip": "CustomShirtStore\\Views\\Message\\Message.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-17T06:03:21.516Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "EmailSender.cs",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Services\\EmailSender.cs",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Services\\EmailSender.cs",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Services\\EmailSender.cs",
-              "RelativeToolTip": "CustomShirtStore\\Services\\EmailSender.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T07:21:33.123Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\Account\\Register.cshtml",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Account\\Register.cshtml",
-              "RelativeToolTip": "CustomShirtStore\\Views\\Account\\Register.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-17T03:37:47.971Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "VerifyEmail.cshtml",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Account\\VerifyEmail.cshtml",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\Account\\VerifyEmail.cshtml",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\Account\\VerifyEmail.cshtml",
-              "RelativeToolTip": "CustomShirtStore\\Views\\Account\\VerifyEmail.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-17T03:23:08.63Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Views\\_ViewStart.cshtml",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Views\\_ViewStart.cshtml",
-              "RelativeToolTip": "CustomShirtStore\\Views\\_ViewStart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-17T06:07:16.959Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Register.cs",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Controllers\\Register.cs",
-              "RelativeDocumentMoniker": "CustomShirtStore\\Controllers\\Register.cs",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\Controllers\\Register.cs",
-              "RelativeToolTip": "CustomShirtStore\\Controllers\\Register.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T03:37:42.849Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "VerifyEmailViewModel.cs",
-              "DocumentMoniker": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\ViewModels\\VerifyEmailViewModel.cs",
-              "RelativeDocumentMoniker": "CustomShirtStore\\ViewModels\\VerifyEmailViewModel.cs",
-              "ToolTip": "E:\\PRN222\\CustomShirtStore\\CustomShirtStore\\ViewModels\\VerifyEmailViewModel.cs",
-              "RelativeToolTip": "CustomShirtStore\\ViewModels\\VerifyEmailViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T03:21:13.801Z"
+              "DocumentIndex": 22,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\appsettings.json",
+              "RelativeDocumentMoniker": "CustomShirtStore\\appsettings.json",
+              "ToolTip": "D:\\Ki8\\EXE202\\exe1\\CustomShirtStore\\CustomShirtStore\\appsettings.json",
+              "RelativeToolTip": "CustomShirtStore\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-19T03:05:21.728Z"
             }
           ]
         }

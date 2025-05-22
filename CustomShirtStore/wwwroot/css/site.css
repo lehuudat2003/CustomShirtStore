@@ -1,4 +1,4 @@
-html {
+﻿html {
   font-size: 14px;
   overflow-x:hidden;
 }
@@ -19,4 +19,36 @@ html {
     --bg-primary: #E52C2C;
     --bg-second-primary: #e92ace ;
     --bg-secondary:#F6E6E8;
+}
+.form-container {
+    margin-top: 100px; /* đẩy form xuống dưới header */
+    padding: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button[type="submit"] {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }

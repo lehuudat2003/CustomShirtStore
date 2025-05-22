@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace CustomShirtStore.Models;
 
-public partial class CustomerDesign
+public class CustomerDesign
 {
     public long Id { get; set; }
+    public string? UserId { get; set; }
+    public long ProductId { get; set; }
+    public string? DesignImageUrl { get; set; }
+    public string? Color { get; set; }
+    public string? Text { get; set; }
+    public string? UploadedImagePath { get; set; }
+    public string? Size { get; set; }
+    public decimal Price { get; set; }
+    public DateTime CreatedAt { get; set; }
 
-    public string BackDesign { get; set; } = null!;
-
-    public string FrontDesign { get; set; } = null!;
-
-    public long OrderItemId { get; set; }
-
-    public virtual OrderItem OrderItem { get; set; } = null!;
+    public virtual Product? Product { get; set; }
 }
