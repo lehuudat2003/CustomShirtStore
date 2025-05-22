@@ -1,0 +1,366 @@
+﻿@using CustomShirtStore.ViewModels
+@model OrderInformationViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Giỏ hàng";
+}
+
+<div class="mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <a asp-controller="Home" asp-action="Index" class="btn btn-primary mb-3">Quay lại trang chủ</a>
+            </div>
+            <div class="col-md-6">
+                <div class="cart-box">
+                    <h2>Giỏ hàng</h2>
+                    <div class="cart-items">
+                        <!-- Sample cart item -->
+                        <div class="cart-item d-flex align-items-center mb-4">
+                            <img src="https://via.placeholder.com/80" alt="Product Image" class="cart-item-img me-3">
+                            <div class="cart-item-details flex-grow-1">
+                                <h5 class="cart-item-name">Áo Thun Nam</h5>
+                                <p class="cart-item-price text-muted">150,000 VND</p>
+                            </div>
+                            <div class="cart-item-quantity d-flex align-items-center">
+                                <input type="number" class="form-control quantity-input" value="1" min="1" style="width: 80px;">
+                            </div>
+                            <div class="cart-item-remove ms-3">
+                                <button class="btn btn-danger btn-sm">Xóa</button>
+                            </div>
+                        </div>
+                        <!-- Sample cart item -->
+                        <div class="cart-item d-flex align-items-center mb-4">
+                            <img src="https://via.placeholder.com/80" alt="Product Image" class="cart-item-img me-3">
+                            <div class="cart-item-details flex-grow-1">
+                                <h5 class="cart-item-name">Áo Polo Nữ</h5>
+                                <p class="cart-item-price text-muted">200,000 VND</p>
+                            </div>
+                            <div class="cart-item-quantity d-flex align-items-center">
+                                <input type="number" class="form-control quantity-input" value="2" min="1" style="width: 80px;">
+                            </div>
+                            <div class="cart-item-remove ms-3">
+                                <button class="btn btn-danger btn-sm">Xóa</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-summary mt-4">
+                        <div class="d-flex justify-content-between">
+                            <h5>Tổng cộng:</h5>
+                            <h5>350,000 VND</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="account-box">
+                    <h2>Thông tin đặt hàng</h2>
+                    <form asp-action="Order" asp-controller="Order" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger" />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger" />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="PhoneNumber" class="form-label"></label>
+                            <input asp-for="PhoneNumber" class="form-control" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger" />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="City" class="form-label"></label>
+                            <select asp-for="City" class="form-control">
+                                <option value="">Chọn thành phố</option>
+                            </select>
+                            <span asp-validation-for="City" class="text-danger" />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="District" class="form-label"></label>
+                            <select asp-for="District" class="form-control">
+                                <option value="">Chọn quận/huyện</option>
+                            </select>
+                            <span asp-validation-for="District" class="text-danger" />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Ward" class="form-label"></label>
+                            <select asp-for="Ward" class="form-control">
+                                <option value="">Chọn phường/xã</option>
+                            </select>
+                            <span asp-validation-for="Ward" class="text-danger" />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="HouseNumber" class="form-label"></label>
+                            <input asp-for="HouseNumber" class="form-control" />
+                            <span asp-validation-for="HouseNumber" class="text-danger" />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="TotalAmount" class="form-label"></label>
+                            <input asp-for="TotalAmount" class="form-control" readonly />
+                            <span asp-validation-for="TotalAmount" class="text-danger" />
+                        </div>
+                        <div class="mb-3">
+                            <input type="submit" class="btn btn-success" value="Đặt hàng"></input>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+    }
+    <script>
+                document.addEventListener('DOMContentLoaded', () => {
+            const citySelect = document.querySelector('select[name="City"]');
+            const districtSelect = document.querySelector('select[name="District"]');
+            const wardSelect = document.querySelector('select[name="Ward"]');
+
+            // Fetch provinces/cities
+            fetch('https://provinces.open-api.vn/api/')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Không thể tải danh sách thành phố');
+                    }
+                    return response.json();
+                })
+                .then(cities => {
+                    citySelect.innerHTML = '<option value="">Chọn thành phố</option>';
+                    cities.forEach(city => {
+                        const option = document.createElement('option');
+                        option.value = city.name; // Use name for form submission
+                        option.textContent = city.name;
+                        option.dataset.code = city.code; // Store code for API calls
+                        citySelect.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    alert(error.message || 'Không thể tải danh sách thành phố. Vui lòng thử lại.');
+                });
+
+            // Fetch districts when a city is selected
+            citySelect.addEventListener('change', () => {
+                const selectedOption = citySelect.selectedOptions[0];
+                const cityCode = selectedOption ? selectedOption.dataset.code : null;
+                districtSelect.innerHTML = '<option value="">Chọn quận/huyện</option>';
+                wardSelect.innerHTML = '<option value="">Chọn phường/xã</option>';
+                districtSelect.disabled = true;
+                wardSelect.disabled = true;
+
+                if (cityCode) {
+                    fetch(`https://provinces.open-api.vn/api/p/${cityCode}?depth=2`)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Không thể tải danh sách quận/huyện');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            districtSelect.innerHTML = '<option value="">Chọn quận/huyện</option>';
+                            data.districts.forEach(district => {
+                                const option = document.createElement('option');
+                                option.value = district.name; // Use name for form submission
+                                option.textContent = district.name;
+                                option.dataset.code = district.code; // Store code for API calls
+                                districtSelect.appendChild(option);
+                            });
+                            districtSelect.disabled = false;
+                        })
+                        .catch(error => {
+                            alert(error.message || 'Không thể tải danh sách quận/huyện. Vui lòng thử lại.');
+                        });
+                }
+            });
+
+            // Fetch wards when a district is selected
+            districtSelect.addEventListener('change', () => {
+                const selectedOption = districtSelect.selectedOptions[0];
+                const districtCode = selectedOption ? selectedOption.dataset.code : null;
+                wardSelect.innerHTML = '<option value="">Chọn phường/xã</option>';
+                wardSelect.disabled = true;
+
+                if (districtCode) {
+                    fetch(`https://provinces.open-api.vn/api/d/${districtCode}?depth=2`)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Không thể tải danh sách phường/xã');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            wardSelect.innerHTML = '<option value="">Chọn phường/xã</option>';
+                            data.wards.forEach(ward => {
+                                const option = document.createElement('option');
+                                option.value = ward.name; // Use name for form submission
+                                option.textContent = ward.name;
+                                option.dataset.code = ward.code; // Store code for reference (if needed)
+                                wardSelect.appendChild(option);
+                            });
+                            wardSelect.disabled = false;
+                        })
+                        .catch(error => {
+                            alert(error.message || 'Không thể tải danh sách phường/xã. Vui lòng thử lại.');
+                        });
+                }
+            });
+        });
+    </script>
+}
+
+<style>
+    .cart-box {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .cart-box h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+    .cart-item {
+        background-color: #fff;
+        padding: 15px;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        transition: box-shadow 0.3s ease;
+    }
+
+        .cart-item:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+    .cart-item-img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    .cart-item-name {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    .cart-item-price {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .quantity-input {
+        text-align: center;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        padding: 5px;
+    }
+
+        .quantity-input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+        }
+
+    .cart-item-remove .btn {
+        font-size: 0.9rem;
+        padding: 5px 15px;
+    }
+
+    .cart-summary {
+        border-top: 1px solid #e0e0e0;
+        padding-top: 15px;
+    }
+
+        .cart-summary h5 {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+    .account-box {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .account-box h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+    .form-label {
+        font-weight: 500;
+        color: #444;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+        }
+
+        .form-control[readonly] {
+            background-color: #e9ecef;
+            cursor: not-allowed;
+        }
+
+    .text-danger {
+        font-size: 0.875rem;
+        margin-top: 5px;
+        display: block;
+    }
+
+    .btn-submit {
+        width: 100%;
+        padding: 12px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+
+    .mb-3 {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .btn-success {
+        background-color: var(--bg-primary,#E52C2C);
+        border: none;
+        border-radius: 25px;
+        width: 100%;
+    }
+
+    .btn-success:hover {
+        background-color: var(--bg-primary,#E52C2C);
+    }
+</style>

@@ -2,7 +2,7 @@
 
 namespace CustomShirtStore.Controllers
 {
-    public class Cart : Controller
+    public class CartController : Controller
     {
         public IActionResult Index()
         {
