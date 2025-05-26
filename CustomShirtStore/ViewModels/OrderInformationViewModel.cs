@@ -1,8 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CustomShirtStore.Models;
+using System.ComponentModel.DataAnnotations;
 namespace CustomShirtStore.ViewModels
 {
     public class OrderInformationViewModel
     {
+        public List<CartItem> CartItems { get; set; } = new();
         [Required(ErrorMessage = "Bạn cần nhập tên.")]
         [StringLength(100, ErrorMessage = "Tên không được vượt quá 100 ký tự.")]
         [Display(Name = "Tên người nhận")]
@@ -35,6 +37,7 @@ namespace CustomShirtStore.ViewModels
         public string HouseNumber { get; set; }
 
         [Required(ErrorMessage = "Bạn cần chọn ít nhất một sản phẩm.")]
+        [Display(Name= "Tổng số tiền")]
         public double TotalAmount { get; set; }
     }
 }

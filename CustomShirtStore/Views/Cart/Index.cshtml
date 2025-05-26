@@ -1,10 +1,13 @@
 ﻿@using CustomShirtStore.ViewModels
+@using CustomShirtStore.Extensions
 @model OrderInformationViewModel
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
     ViewData["Title"] = "Giỏ hàng";
+    var cartItems = Context.Session.GetObject<List<CartItem>>("Cart") ?? new List<CartItem>();
+    var totalAmount = cartItems.Sum(item => item.Price * item.Quantity);
 }
 
 <div class="mt-5">
@@ -13,104 +16,113 @@
             <div class="col-md-12">
                 <a asp-controller="Home" asp-action="Index" class="btn btn-primary mb-3">Quay lại trang chủ</a>
             </div>
-            <div class="col-md-6">
-                <div class="cart-box">
-                    <h2>Giỏ hàng</h2>
-                    <div class="cart-items">
-                        <!-- Sample cart item -->
-                        <div class="cart-item d-flex align-items-center mb-4">
-                            <img src="https://via.placeholder.com/80" alt="Product Image" class="cart-item-img me-3">
-                            <div class="cart-item-details flex-grow-1">
-                                <h5 class="cart-item-name">Áo Thun Nam</h5>
-                                <p class="cart-item-price text-muted">150,000 VND</p>
+            <form asp-action="Order" asp-controller="Order" method="post">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="cart-box">
+                            <h2>Giỏ hàng</h2>
+                            <div class="cart-items">
+                                @if (Model.CartItems == null || !Model.CartItems.Any())
+                                {
+                                    <p>Giỏ hàng của bạn đang trống.</p>
+                                }
+                                else
+                                {
+                                    @for (int i = 0; i < Model.CartItems.Count; i++)
+                                    {
+                                        <div class="cart-item d-flex align-items-center mb-4">
+                                            <img src="@Model.CartItems[i].DesignImageUrl" alt="Product Image" class="cart-item-img me-3" style="width: 80px; height: 80px; object-fit: cover;">
+                                            <div class="cart-item-details flex-grow-1">
+                                                <h5 class="cart-item-name">@Model.CartItems[i].ProductName</h5>
+                                                <p class="cart-item-price text-muted">@Model.CartItems[i].Price.ToString("N0") VND</p>
+                                            </div>
+                                            <div class="cart-item-quantity d-flex align-items-center">
+                                                <input type="hidden" name="CartItems[@i].ProductId" value="@Model.CartItems[i].ProductId" />
+                                                <input type="number"
+                                                       name="CartItems[@i].Quantity"
+                                                       class="form-control quantity-input"
+                                                       value="@Model.CartItems[i].Quantity"
+                                                       min="1"
+                                                       style="width: 80px;"
+                                                       onchange="updateQuantity(@Model.CartItems[i].ProductId, this.value)" />
+                                            </div>
+                                            <div class="cart-item-remove ms-3">
+                                                <!-- You can add a button or JS for removal if you want -->
+                                                <a href="@Url.Action("RemoveItem", "Cart", new { productId = Model.CartItems[i].ProductId })"
+                                                   class="btn btn-danger btn-sm"
+                                                   onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này không?');">
+                                                    Xóa
+                                                </a>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+
                             </div>
-                            <div class="cart-item-quantity d-flex align-items-center">
-                                <input type="number" class="form-control quantity-input" value="1" min="1" style="width: 80px;">
-                            </div>
-                            <div class="cart-item-remove ms-3">
-                                <button class="btn btn-danger btn-sm">Xóa</button>
-                            </div>
-                        </div>
-                        <!-- Sample cart item -->
-                        <div class="cart-item d-flex align-items-center mb-4">
-                            <img src="https://via.placeholder.com/80" alt="Product Image" class="cart-item-img me-3">
-                            <div class="cart-item-details flex-grow-1">
-                                <h5 class="cart-item-name">Áo Polo Nữ</h5>
-                                <p class="cart-item-price text-muted">200,000 VND</p>
-                            </div>
-                            <div class="cart-item-quantity d-flex align-items-center">
-                                <input type="number" class="form-control quantity-input" value="2" min="1" style="width: 80px;">
-                            </div>
-                            <div class="cart-item-remove ms-3">
-                                <button class="btn btn-danger btn-sm">Xóa</button>
+                            <div class="cart-summary mt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h5>Tổng cộng:</h5>
+                                    <h5>@totalAmount.ToString("N0") VND</h5>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="cart-summary mt-4">
-                        <div class="d-flex justify-content-between">
-                            <h5>Tổng cộng:</h5>
-                            <h5>350,000 VND</h5>
+                    <div class="col-md-6">
+                        <div class="account-box">
+                            <h2>Thông tin đặt hàng</h2>
+
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="mb-3">
+                                <label asp-for="Name" class="form-label"></label>
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger" />
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="Email" class="form-label"></label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger" />
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="PhoneNumber" class="form-label"></label>
+                                <input asp-for="PhoneNumber" class="form-control" />
+                                <span asp-validation-for="PhoneNumber" class="text-danger" />
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="City" class="form-label"></label>
+                                <select asp-for="City" class="form-control">
+                                    <option value="">Chọn thành phố</option>
+                                </select>
+                                <span asp-validation-for="City" class="text-danger" />
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="District" class="form-label"></label>
+                                <select asp-for="District" class="form-control">
+                                    <option value="">Chọn quận/huyện</option>
+                                </select>
+                                <span asp-validation-for="District" class="text-danger" />
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="Ward" class="form-label"></label>
+                                <select asp-for="Ward" class="form-control">
+                                    <option value="">Chọn phường/xã</option>
+                                </select>
+                                <span asp-validation-for="Ward" class="text-danger" />
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="HouseNumber" class="form-label"></label>
+                                <input asp-for="HouseNumber" class="form-control" />
+                                <span asp-validation-for="HouseNumber" class="text-danger" />
+                            </div>
+
+                            <div class="mb-3">
+                                <input type="submit" class="btn btn-success" value="Đặt hàng"></input>
+                            </div>
                         </div>
+
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="account-box">
-                    <h2>Thông tin đặt hàng</h2>
-                    <form asp-action="Order" asp-controller="Order" method="post">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <div class="mb-3">
-                            <label asp-for="Name" class="form-label"></label>
-                            <input asp-for="Name" class="form-control" />
-                            <span asp-validation-for="Name" class="text-danger" />
-                        </div>
-                        <div class="mb-3">
-                            <label asp-for="Email" class="form-label"></label>
-                            <input asp-for="Email" class="form-control" />
-                            <span asp-validation-for="Email" class="text-danger" />
-                        </div>
-                        <div class="mb-3">
-                            <label asp-for="PhoneNumber" class="form-label"></label>
-                            <input asp-for="PhoneNumber" class="form-control" />
-                            <span asp-validation-for="PhoneNumber" class="text-danger" />
-                        </div>
-                        <div class="mb-3">
-                            <label asp-for="City" class="form-label"></label>
-                            <select asp-for="City" class="form-control">
-                                <option value="">Chọn thành phố</option>
-                            </select>
-                            <span asp-validation-for="City" class="text-danger" />
-                        </div>
-                        <div class="mb-3">
-                            <label asp-for="District" class="form-label"></label>
-                            <select asp-for="District" class="form-control">
-                                <option value="">Chọn quận/huyện</option>
-                            </select>
-                            <span asp-validation-for="District" class="text-danger" />
-                        </div>
-                        <div class="mb-3">
-                            <label asp-for="Ward" class="form-label"></label>
-                            <select asp-for="Ward" class="form-control">
-                                <option value="">Chọn phường/xã</option>
-                            </select>
-                            <span asp-validation-for="Ward" class="text-danger" />
-                        </div>
-                        <div class="mb-3">
-                            <label asp-for="HouseNumber" class="form-label"></label>
-                            <input asp-for="HouseNumber" class="form-control" />
-                            <span asp-validation-for="HouseNumber" class="text-danger" />
-                        </div>
-                        <div class="mb-3">
-                            <label asp-for="TotalAmount" class="form-label"></label>
-                            <input asp-for="TotalAmount" class="form-control" readonly />
-                            <span asp-validation-for="TotalAmount" class="text-danger" />
-                        </div>
-                        <div class="mb-3">
-                            <input type="submit" class="btn btn-success" value="Đặt hàng"></input>
-                        </div>
-                    </form>
-                </div>
-            </div>
+                
+            </form>
         </div>
     </div>
 </div>
@@ -213,7 +225,26 @@
                 }
             });
         });
+         function updateQuantity(productId, quantity) {
+            fetch('/Cart/UpdateQuantity', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                },
+                body: JSON.stringify({ productId, quantity })
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Optionally reload or update total
+                    location.reload(); // or update total amount dynamically
+                }
+            });
+        }
     </script>
+    
+       
+
 }
 
 <style>

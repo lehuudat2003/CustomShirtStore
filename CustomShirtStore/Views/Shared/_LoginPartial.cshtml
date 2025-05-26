@@ -1,5 +1,10 @@
-﻿﻿@using Microsoft.AspNetCore.Identity;
+﻿@using CustomShirtStore.Extensions
+@using Microsoft.AspNetCore.Identity;
 @inject SignInManager<UserAccount> signInManager;
+@{
+    var cart = Context.Session.GetObject<List<CartItem>>("Cart") ?? new List<CartItem>();
+    var itemCount = cart.Count;
+}
    <div class="acc-action-container">
     @if (signInManager.IsSignedIn(User))
     {
@@ -12,7 +17,7 @@
     }
     <a class="btn-cart" href="@Url.Action("Index","Cart")" style="color:var(--bg-primary)">
         <i class="fa-solid fa-cart-shopping" style="color:var(--bg-primary);"></i>
-        Giỏ hàng(0)
+        Giỏ hàng(@itemCount)
     </a>
     </div>
 
