@@ -6,6 +6,7 @@ using CustomShirtStore.Models;
 using System.IO;
 using System.Linq;
 using Microsoft.AspNetCore.Hosting;
+using CustomShirtStore.Extensions;
 
 namespace CustomShirtStore.Controllers
 {
@@ -44,7 +45,6 @@ namespace CustomShirtStore.Controllers
 
             return Json(files);
         }
-
         [HttpPost]
         public async Task<IActionResult> SaveDesign(ShirtDesignViewModel model, IFormFile? uploadedImage)
         {
@@ -61,11 +61,27 @@ namespace CustomShirtStore.Controllers
             }
 
             model.Design.CreatedAt = DateTime.Now;
-            _context.CustomerDesigns.Add(model.Design);
-            await _context.SaveChangesAsync();
 
-            return RedirectToAction("Index", "Home");
+            // ----------------- Add to session cart ------------------
+            var cartItem = new CartItem
+            {
+                ProductId = (int)model.Design.ProductId,
+                ProductName = _context.Products.FirstOrDefault(p => p.ProductId == model.Design.ProductId)?.ProductName,
+                Size = model.Design.Size,
+                Color = Request.Form["colorOption"],
+                DesignImageUrl = model.Design.UploadedImagePath,
+                Price = _context.Products.FirstOrDefault(p => p.ProductId == model.Design.ProductId)?.BasePrice ?? 0,
+                Quantity = 1
+            };
+
+            List<CartItem> cart = HttpContext.Session.GetObject<List<CartItem>>("Cart") ?? new List<CartItem>();
+            cart.Add(cartItem);
+            HttpContext.Session.SetObject("Cart", cart);
+            // --------------------------------------------------------
+
+            return RedirectToAction("Index", "Cart");
         }
+
     }
 
 }

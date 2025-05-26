@@ -35,7 +35,7 @@
             </div>
             <input type="submit" value="Đăng nhập" class="btn btn-success w-100 p-2" />
             <p class="text-center mt-2">
-                Bạn chưa có tài khoản? <a asp-controller="Account" asp-action="Register" class="text-decoration-none">Đăng ký</a>
+                Bạn chưa có tài khoản? <a class="register-btn" asp-controller="Account" asp-action="Register" class="text-decoration-none">Đăng ký</a>
             </p>
             <div class="text-center">
                 <a asp-controller="Home" asp-action="Index" class="text-decoration-none mt-3">Quay lại</a>
@@ -49,3 +49,16 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
     }
 }
+
+<style>
+    .btn-success {
+        background-color: var(--bg-primary,#E52C2C);
+        border: none;
+        border-radius: 25px;
+    }
+
+        .btn-success:hover {
+            background-color: var(--bg-primary,#E52C2C);
+        }
+</style>
+
