@@ -7,7 +7,7 @@ public partial class Order
 {
     public long Id { get; set; }
 
-    public long UserId { get; set; }
+    public long? UserId { get; set; }
 
     public string GuestName { get; set; } = null!;
 

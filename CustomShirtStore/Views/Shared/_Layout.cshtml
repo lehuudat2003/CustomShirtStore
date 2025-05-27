@@ -96,8 +96,15 @@
 
                         @if (User.IsInRole("Admin"))
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Admin">Quản lý</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Quản lý
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item text-black" href="@Url.Action("DoanhThu","Admin")">Doanh thu</a></li>
+                                    <li><a class="dropdown-item text-black" href="@Url.Action("DonHang","Admin")">Đơn hàng</a></li>
+                                    <li><a class="dropdown-item text-black" href="@Url.Action("TaiKhoan","Admin")">Tài khoản</a></li>
+                                </ul>
                             </li>
                         }
                         @if (User.IsInRole("Customer"))
