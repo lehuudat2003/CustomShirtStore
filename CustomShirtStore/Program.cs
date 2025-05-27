@@ -23,6 +23,7 @@ builder.Services.AddIdentity<UserAccount, Role>(options =>
     .AddEntityFrameworkStores<Exe201Context>()
     .AddDefaultTokenProviders();
 builder.Services.AddControllersWithViews();
+builder.Services.AddLogging();
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Admin"));
@@ -52,6 +53,7 @@ app.UseStaticFiles();
 
 app.UseSession();
 app.UseRouting();
+app.UseStatusCodePagesWithReExecute("/Error/{0}");
 
 app.UseAuthentication();
 app.UseAuthorization();

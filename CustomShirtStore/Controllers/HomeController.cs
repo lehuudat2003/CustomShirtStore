@@ -25,11 +25,7 @@ namespace CustomShirtStore.Controllers
             return View();
         }
 
-        [Authorize(Roles ="Admin")]
-        public IActionResult Admin()
-        {
-            return View();
-        }
+       
 
         [Authorize(Roles = "Customer")]
         public IActionResult User()

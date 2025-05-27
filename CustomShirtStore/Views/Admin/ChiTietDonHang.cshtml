@@ -1,0 +1,199 @@
+﻿@model CustomShirtStore.ViewModels.OrderDetailViewModel
+
+@{
+    ViewData["Title"] = "Chi tiết đơn hàng ORD001";
+}
+
+<div class="container mt-4">
+    <div class="d-flex align-items-center mb-3">
+        <a href=@Url.Action("DonHang", "Admin") class="btn btn-outline-secondary btn-sm me-2">
+            <i class="fas fa-arrow-left"></i> Quay lại
+        </a>
+        <h2 class="mb-0">Chi tiết đơn hàng ORD001</h2>
+    </div>
+    <p class="text-muted mb-4">Thông tin chi tiết về đơn hàng</p>
+
+    <div class="row">
+        <!-- Sản phẩm trong đơn hàng -->
+        <div class="col-md-9">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4>Sản phẩm trong đơn hàng</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>DESIGN IMG</th>
+                                <th>Số lượng</th>
+                                <th>Link Message</th>
+                                <th>QR IMG</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.OrderItems)
+                            {
+                                <tr>
+                                    <td>@item.ProductName</td>
+                                    <td>
+                                        <div class="border rounded text-center py-2">
+                                            <img src="@item.DesignImageUrl" alt="Design Image" style="width: 60px; height: 60px;" />
+                                            <a href="/Qr/Generate?text=https://google.com&pixelsPerModule=100&download=true" class="d-block mt-1">
+                                                <i class="fas fa-download"></i> Tải về
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>@item.Quantity</td>
+                                    <td>
+                                        <a href="@item.LinkMessage" class="btn btn-outline-primary btn-sm">
+                                            <i class="fas fa-qrcode"></i> xem mẫu chúc
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <div class="border rounded text-center py-2">
+                                            <img src="/Qr/Generate?text=@item.LinkMessage" alt="QR Code for Áo thun" style="width: 60px; height: 60px;" />
+                                            <a href="/Qr/Generate?text=@item.LinkMessage&pixelsPerModule=100&download=true" class="d-block mt-1">
+                                                <i class="fas fa-download"></i> Tải về
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thông tin đơn hàng -->
+        <div class="col-md-3">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4>Thông tin đơn hàng</h4>
+                    <p><strong>Tên khách hàng:</strong> @Model.GuestName</p>
+                    <p><strong>Số điện thoại:</strong> @Model.GuestPhoneNumber</p>
+                    <p><strong>Email:</strong> @Model.GuestEmail</p>
+                    <p><strong>Địa chỉ:</strong> @Model.GuestAddress</p>
+                    <p><strong>Tổng tiền:</strong> @Model.TotalAmountFormatted</p>
+                    <p><strong>Trạng thái:</strong> <span class=" text-black badge @GetStatusColor(Model.OrderStatus)">@Model.OrderStatus</span></p>
+                </div>
+            </div>
+
+            <!-- Thao tác -->
+            <div class="card">
+                <div class="card-body">
+                    <h4>Sửa trạng thái đơn hàng</h4>
+                    <select id="statusDropdown" class="form-select" onchange="updateStatus(this)">
+                        <option value="Đang xử lý" selected>Đang xử lý</option>
+                        <option value="Hoàn thành">Hoàn thành</option>
+                        <option value="Đang giao">Đang giao</option>
+                        <option value="Đã hủy">Đã hủy</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        .badge {
+            display: inline-block;
+            padding: 0.25em 0.4em;
+            font-size: 75%;
+            font-weight: 700;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 0.25rem;
+        }
+
+        .badge-Đang-xử-lý {
+            background-color: #ffc107;
+            color: #000;
+        }
+
+        .btn-sm i {
+            margin-right: 4px;
+        }
+
+        .card {
+            border-radius: 0.5rem;
+        }
+
+        .table th, .table td {
+            vertical-align: middle;
+        }
+
+        .border.rounded {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <script>
+        function updateStatus(dropdown) {
+            // Get the selected status
+            const newStatus = dropdown.value;
+
+            // Update the status display on the page
+            const statusElement = document.querySelector('.badge');
+            statusElement.textContent = newStatus;
+
+            // Update the badge color based on the new status
+            statusElement.className = 'badge text-black'; // Reset classes
+            if (newStatus === 'Đang xử lý') {
+                statusElement.classList.add('badge-Đang-xử-lý');
+            } else if (newStatus === 'Hoàn thành') {
+                statusElement.classList.add('badge-Hoàn-thành');
+            } else if (newStatus === 'Đang giao') {
+                statusElement.classList.add('badge-Đang-giao');
+            } else if (newStatus === 'Đã hủy') {
+                statusElement.classList.add('badge-Đã-hủy');
+            }
+
+            // Placeholder for server-side update (e.g., via AJAX)
+            // Example AJAX call (uncomment and adjust as needed):
+            /*
+            fetch('/Order/UpdateStatus', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ orderId: 'ORD001', status: newStatus })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Status updated successfully!');
+                } else {
+                    alert('Failed to update status: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error updating status:', error);
+                alert('An error occurred while updating the status.');
+            });
+            */
+        }
+    </script>
+}
+
+@functions {
+    private string GetStatusColor(string status)
+    {
+        return status switch
+        {
+            "Đang xử lý" => "badge-Đang-xử-lý",
+            "Hoàn thành" => "badge-Hoàn-thành",
+            "Đang giao" => "badge-Đang-giao",
+            "Đã hủy" => "badge-Đã-hủy",
+            _ => ""
+        };
+    }
+}

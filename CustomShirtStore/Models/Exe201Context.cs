@@ -102,6 +102,7 @@ public partial class Exe201Context : IdentityDbContext<
         modelBuilder.Entity<Font>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("fonts_id_primary");
+            entity.ToTable("Font");
 
             entity.Property(e => e.Id)
                 .ValueGeneratedOnAdd()
