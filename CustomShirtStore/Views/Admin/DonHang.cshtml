@@ -45,7 +45,7 @@
                         </td>
                         <td>
                             <a href="@Url.Action("ChiTietDonHang", "Admin", new { orderId = order.Id })" class="btn btn-sm btn-info"><i class="fas fa-eye"></i> Chi tiết</a>
-                            <a href="#" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Xóa</a>
+                            <a href="@Url.Action("XoaDonHang","Admin", new { orderId = order.Id })" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Xóa</a>
                         </td>
                     </tr>
                 }
@@ -93,6 +93,7 @@
             margin-right: 4px;
         }
     </style>
+    
 }
 
 @functions {

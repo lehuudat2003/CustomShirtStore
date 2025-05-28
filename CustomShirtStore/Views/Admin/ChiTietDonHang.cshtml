@@ -1,7 +1,7 @@
 ﻿@model CustomShirtStore.ViewModels.OrderDetailViewModel
 
 @{
-    ViewData["Title"] = "Chi tiết đơn hàng ORD001";
+    ViewData["Title"] = "Chi tiết đơn hàng";
 }
 
 <div class="container mt-4">
@@ -9,7 +9,7 @@
         <a href=@Url.Action("DonHang", "Admin") class="btn btn-outline-secondary btn-sm me-2">
             <i class="fas fa-arrow-left"></i> Quay lại
         </a>
-        <h2 class="mb-0">Chi tiết đơn hàng ORD001</h2>
+        <h2 class="mb-0">Chi tiết đơn hàng</h2>
     </div>
     <p class="text-muted mb-4">Thông tin chi tiết về đơn hàng</p>
 
@@ -42,7 +42,7 @@
                                             </a>
                                         </div>
                                     </td>
-                                    <td>@item.Quantity</td>
+                                    <td>@item.Quantity - @item.Size</td>
                                     <td>
                                         <a href="@item.LinkMessage" class="btn btn-outline-primary btn-sm">
                                             <i class="fas fa-qrcode"></i> xem mẫu chúc
@@ -83,12 +83,12 @@
             <!-- Thao tác -->
             <div class="card">
                 <div class="card-body">
-                    <h4>Sửa trạng thái đơn hàng</h4>
+                    <h4>Thao tác</h4>
                     <select id="statusDropdown" class="form-select" onchange="updateStatus(this)">
-                        <option value="Đang xử lý" selected>Đang xử lý</option>
-                        <option value="Hoàn thành">Hoàn thành</option>
-                        <option value="Đang giao">Đang giao</option>
-                        <option value="Đã hủy">Đã hủy</option>
+                        <option value="Đang xử lý" selected="@(Model.OrderStatus == "Đang xử lý")">Đang xử lý</option>
+                        <option value="Hoàn thành" selected="@(Model.OrderStatus == "Hoàn thành")">Hoàn thành</option>
+                        <option value="Đang giao" selected="@(Model.OrderStatus == "Đang giao")">Đang giao</option>
+                        <option value="Đã hủy" selected="@(Model.OrderStatus == "Đã huỷ")" >Đã hủy</option>
                     </select>
                 </div>
             </div>
@@ -159,27 +159,28 @@
 
             // Placeholder for server-side update (e.g., via AJAX)
             // Example AJAX call (uncomment and adjust as needed):
-            /*
-            fetch('/Order/UpdateStatus', {
+            fetch('/Admin/UpdateOrderStatus', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
                 },
-                body: JSON.stringify({ orderId: 'ORD001', status: newStatus })
+                body: JSON.stringify({ orderId: @Model.OrderId, status: newStatus })
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert('Status updated successfully!');
-                } else {
-                    alert('Failed to update status: ' + data.message);
-                }
+            
+            .then(response => {
+               if(response.ok){
+                   alert('Trạng thái đơn hàng cập nhật thành công!');
+                   location.reload();
+               } else{
+                   alert('Đã có lỗi xảy ra khi cập nhật đơn hàng.');
+               }
             })
             .catch(error => {
                 console.error('Error updating status:', error);
                 alert('An error occurred while updating the status.');
             });
-            */
+            
         }
     </script>
 }

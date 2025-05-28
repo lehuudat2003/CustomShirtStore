@@ -11,6 +11,7 @@ namespace CustomShirtStore.ViewModels
         public string GuestAddress { get; set; }
         public string TotalAmountFormatted { get; set; }
         public string OrderStatus { get; set; }
+
         public List<OrderItemViewModel> OrderItems { get; set; } = new List<OrderItemViewModel>();
         public class OrderItemViewModel
         {
@@ -20,6 +21,7 @@ namespace CustomShirtStore.ViewModels
             public int Quantity { get; set; } // Adjusted from long to int
             public string LinkMessage { get; set; }
             public string ItemPriceFormatted { get; set; }
+            public string Size { get; set; }
         }
     }
 }
