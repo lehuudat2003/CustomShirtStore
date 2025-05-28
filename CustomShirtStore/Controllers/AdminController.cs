@@ -70,6 +70,7 @@ namespace CustomShirtStore.Controllers
                 GuestAddress = order.GuestAddress,
                 TotalAmountFormatted = string.Format("{0:N0} VND", order.TotalAmount),
                 OrderStatus = order.OrderStatus,
+                GuestEmail = order.GuestEmail,
                 OrderItems = order.OrderItems.Select(oi => new OrderDetailViewModel.OrderItemViewModel
                 {
                     OrderItemId = oi.Id,
@@ -77,7 +78,8 @@ namespace CustomShirtStore.Controllers
                     DesignImageUrl = oi.CustomerDesigns.FirstOrDefault()?.DesignImageUrl ?? string.Empty,
                     LinkMessage = $"/Message/{oi.Id}",
                     Quantity = (int)oi.Quantity,
-                    ItemPriceFormatted = string.Format("{0:N0} VND", oi.ItemPrice)
+                    ItemPriceFormatted = string.Format("{0:N0} VND", oi.ItemPrice),
+                    Size = oi.Size
                 }
                 ).ToList()
             };
@@ -93,5 +95,75 @@ namespace CustomShirtStore.Controllers
         {
             return View();
         }
+
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> UpdateOrderStatus([FromBody] OrderStatusUpdateRequest request)
+        {
+            var order = await _context.Orders.FirstOrDefaultAsync(o => o.Id == request.OrderId); // Replace 1 with the actual order ID(request.OrderId);
+            if (order != null)
+            {
+                order.OrderStatus = request.Status;
+                await _context.SaveChangesAsync();
+            }
+            return Ok();
+        }
+        public class OrderStatusUpdateRequest
+        {
+            public int OrderId { get; set; }
+            public string Status { get; set; }
+        }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> XoaDonHang(int orderId)
+        {
+            try
+            {
+                // Find the order with related OrderItems and CustomerDesigns, including Product
+                var order = await _context.Orders
+                    .Include(o => o.OrderItems)
+                        .ThenInclude(oi => oi.CustomerDesigns)
+                            .ThenInclude(cd => cd.Product)
+                    .FirstOrDefaultAsync(o => o.Id == orderId);
+
+                if (order == null)
+                {
+                    TempData["ErrorMessage"] = "Đơn hàng không tồn tại.";
+                    return RedirectToAction("DonHang");
+                }
+
+                // Delete all CustomerDesigns for each OrderItem
+                foreach (var orderItem in order.OrderItems)
+                {
+                    if (orderItem.CustomerDesigns.Any())
+                    {
+                        _context.CustomerDesigns.RemoveRange(orderItem.CustomerDesigns);
+                    }
+                }
+
+                // Delete all OrderItems
+                if (order.OrderItems.Any())
+                {
+                    _context.OrderItems.RemoveRange(order.OrderItems);
+                }
+
+                // Delete the Order
+                _context.Orders.Remove(order);
+
+                // Save changes
+                await _context.SaveChangesAsync();
+
+                TempData["SuccessMessage"] = "Xóa đơn hàng và các mục liên quan thành công.";
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"Lỗi khi xóa đơn hàng: {ex.Message}";
+            }
+
+            return RedirectToAction("DonHang");
+        }
+
+
     }
 }
