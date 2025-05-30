@@ -19,7 +19,7 @@
             <div class="card mb-4">
                 <div class="card-body">
                     <h4>Sản phẩm trong đơn hàng</h4>
-                    <table class="table table-bordered">
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th>Tên sản phẩm</th>
@@ -36,8 +36,8 @@
                                     <td>@item.ProductName</td>
                                     <td>
                                         <div class="border rounded text-center py-2">
-                                            <img src="@item.DesignImageUrl" alt="Design Image" style="width: 60px; height: 60px;" />
-                                            <a href="/Qr/Generate?text=https://google.com&pixelsPerModule=100&download=true" class="d-block mt-1">
+                                            <img src="@item.DesignImageUrl" alt="Design Image" style="width: 120px; " />
+                                            <a href="@item.DesignImageUrl" class="d-block mt-1" download="@item.DesignImageUrl">
                                                 <i class="fas fa-download"></i> Tải về
                                             </a>
                                         </div>
