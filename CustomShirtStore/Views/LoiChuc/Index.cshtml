@@ -1,0 +1,95 @@
+﻿@model CustomShirtStore.Models.BirthdayCard
+
+@{
+    ViewData["Title"] = "Chúc mừng sinh nhật";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/css01.css" />
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Pacifico|Nunito+Sans" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron img_banner_hpbd">
+            <div class="text-center text-danger bg-danger">
+                <h1>TO: @Model.Recipient</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-md-4 col-sm-4"><p style="padding-top: 5px"></p></div>
+            <div id="bond" class="col-xs-8 col-md-8 col-sm-8 text-center">
+                <img data-toggle="modal" data-target="#myModal"
+                     class="media-object img-responsive img-thumbnail bg-snow-tranparent-hidden"
+                     src="@Model.BackgroundImagePath"
+                     alt="Birthday" style="height: 360px" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h4 class="modal-title text-info" id="myModalLabel">Thiệp sinh nhật</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="containeri">
+                        <img class="img img-responsive" src="@Model.BackgroundImagePath" style="height: 560px" alt="Thiệp" />
+                        <audio controls autoplay>
+                            <source src="@Model.AudioPath" type="audio/mpeg" />
+                            Trình duyệt của bạn không hỗ trợ audio.
+                        </audio>
+                    </div>
+
+                    <h1 class="heading text-danger bg-danger">
+                        <div class="containeri">
+                            <img class="img img-responsive" src="@Model.NoteImagePath" alt="Note" />
+                            <p class="top-right">@Model.Recipient</p>
+                            <p class="bottom-right">@Model.Message2</p>
+                            <p class="top-left">@Model.Message1</p>
+                            <p class="and">@Model.Message3</p>
+                            <p class="center">@Model.CenterMessage</p>
+                            <p class="bottom-left">@Model.Sender</p>
+                        </div>
+                    </h1>
+
+                    <div class="containeri">
+                        <img class="img img-responsive" src="@Model.ImagePath" alt="Image" />
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid footer navbar-fixed-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-8">
+                    <p class="text-left">Copyright &copy; 2021 - facebook.com/CallmeEnder/</p>
+                </div>
+                <div class="col-xs-4"></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+    <script src="~/js/snowstorm-min.js"></script>
+    <script src="~/js/js01.js"></script>
+</body>
+</html>

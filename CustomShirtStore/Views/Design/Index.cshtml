@@ -171,7 +171,7 @@
 
             <h4>Tổng cộng:</h4>
             <p><b>Tổng tiền:</b> @Model.Product.BasePrice.ToString("N0") ₫</p>
-
+            <input type="hidden" name="DesignImageBase64" id="DesignImageBase64" />
             <button type="submit" class="btn btn-warning mt-2">🛒 Thêm vào giỏ</button>
         </div>
         <button type="button" class="btn btn-outline-primary mt-3" onclick="exportFullShirtImage()">📤 Xuất ảnh thiết kế</button>
@@ -192,6 +192,7 @@
 
 @section Scripts {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
+   
     <script>
 
         const canvas = new fabric.Canvas('designCanvas', {
@@ -359,6 +360,45 @@
 
 
     </script>
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Dừng submit để chờ ảnh render xong
+
+            const shirtImage = document.getElementById("shirtBase");
+            const shirtCanvas = document.createElement("canvas");
+
+            shirtCanvas.width = shirtImage.width;
+            shirtCanvas.height = shirtImage.height;
+
+            const ctx = shirtCanvas.getContext("2d");
+
+            // Vẽ ảnh áo trước
+            ctx.drawImage(shirtImage, 0, 0, shirtImage.width, shirtImage.height);
+
+            // Tạo ảnh từ canvas thiết kế
+            const designImg = new Image();
+            designImg.onload = function () {
+                const canvasWidth = 220;
+                const canvasHeight = 250;
+
+                const designX = (shirtImage.width - canvasWidth) / 2;
+                const designY = (shirtImage.height - canvasHeight) / 2;
+
+                ctx.drawImage(designImg, designX, designY, canvasWidth, canvasHeight);
+
+                // Chuyển thành base64 và gán vào input ẩn
+                const fullImageData = shirtCanvas.toDataURL("image/png");
+                document.getElementById("DesignImageBase64").value = fullImageData;
+
+                // Gửi form sau khi đã gán ảnh
+                e.target.submit();
+            };
+
+            // Dữ liệu từ canvas thiết kế
+            designImg.src = canvas.toDataURL("image/png");
+        });
+    </script>
+
 }
 
 

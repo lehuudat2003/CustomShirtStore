@@ -31,7 +31,8 @@
                                     @for (int i = 0; i < Model.CartItems.Count; i++)
                                     {
                                         <div class="cart-item d-flex align-items-center mb-4">
-                                            <img src="@Model.CartItems[i].DesignImageUrl" alt="Product Image" class="cart-item-img me-3" style="width: 80px; height: 80px; object-fit: cover;">
+                                            <img src="@Model.CartItems[i].DesignImageUrl" alt="Product Image" style="width: 80px; height: 80px; object-fit: cover;" />
+
                                             <div class="cart-item-details flex-grow-1">
                                                 <h5 class="cart-item-name">@Model.CartItems[i].ProductName</h5>
                                                 <p class="cart-item-price text-muted">@Model.CartItems[i].Price.ToString("N0") VND</p>
