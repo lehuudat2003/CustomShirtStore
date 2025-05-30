@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using Microsoft.AspNetCore.Hosting;
 using CustomShirtStore.Extensions;
+using System.Text.RegularExpressions;
 
 namespace CustomShirtStore.Controllers
 {
@@ -45,9 +46,33 @@ namespace CustomShirtStore.Controllers
 
             return Json(files);
         }
+
+
+
         [HttpPost]
-        public async Task<IActionResult> SaveDesign(ShirtDesignViewModel model, IFormFile? uploadedImage)
+        public async Task<IActionResult> SaveDesign(ShirtDesignViewModel model, IFormFile? uploadedImage, string? DesignImageBase64)
         {
+            string? designImageUrl = null;
+
+            // Nếu có ảnh base64 từ canvas
+            if (!string.IsNullOrEmpty(DesignImageBase64))
+            {
+                var base64Data = Regex.Match(DesignImageBase64, @"data:image/(?<type>.+?);base64,(?<data>.+)").Groups["data"].Value;
+                var imageBytes = Convert.FromBase64String(base64Data);
+                var fileName = Guid.NewGuid().ToString() + ".png";
+                var folder = Path.Combine("images", "customerdesign");
+                var folderPath = Path.Combine(_env.WebRootPath, folder);
+                var filePath = Path.Combine(folderPath, fileName);
+
+                if (!Directory.Exists(folderPath))
+                    Directory.CreateDirectory(folderPath);
+
+                await System.IO.File.WriteAllBytesAsync(filePath, imageBytes);
+
+                designImageUrl = "/" + Path.Combine(folder, fileName).Replace("\\", "/");
+            }
+
+            // Nếu có ảnh upload từ máy (ưu tiên ảnh này)
             if (uploadedImage != null)
             {
                 string folder = Path.Combine("images", "customerdesign");
@@ -58,29 +83,38 @@ namespace CustomShirtStore.Controllers
                 await uploadedImage.CopyToAsync(stream);
 
                 model.Design.UploadedImagePath = "/" + Path.Combine(folder, fileName).Replace("\\", "/");
+                designImageUrl = model.Design.UploadedImagePath;
             }
 
+            model.Design.Color = Request.Form["colorOption"];
             model.Design.CreatedAt = DateTime.Now;
+            model.Design.DesignImageUrl = designImageUrl;
 
-            // ----------------- Add to session cart ------------------
+            // ✅ Lưu CustomerDesign vào database
+            _context.CustomerDesigns.Add(model.Design);
+            await _context.SaveChangesAsync();
+
+            // Thêm vào session cart
+            var product = _context.Products.FirstOrDefault(p => p.ProductId == model.Design.ProductId);
+
             var cartItem = new CartItem
             {
                 ProductId = (int)model.Design.ProductId,
-                ProductName = _context.Products.FirstOrDefault(p => p.ProductId == model.Design.ProductId)?.ProductName,
+                ProductName = product?.ProductName,
                 Size = model.Design.Size,
-                Color = Request.Form["colorOption"],
-                DesignImageUrl = model.Design.UploadedImagePath,
-                Price = _context.Products.FirstOrDefault(p => p.ProductId == model.Design.ProductId)?.BasePrice ?? 0,
+                Color = model.Design.Color,
+                DesignImageUrl = designImageUrl,
+                Price = product?.BasePrice ?? 0,
                 Quantity = 1
             };
 
             List<CartItem> cart = HttpContext.Session.GetObject<List<CartItem>>("Cart") ?? new List<CartItem>();
             cart.Add(cartItem);
             HttpContext.Session.SetObject("Cart", cart);
-            // --------------------------------------------------------
 
             return RedirectToAction("Index", "Cart");
         }
+
 
     }
 

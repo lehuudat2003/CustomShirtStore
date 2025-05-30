@@ -27,7 +27,8 @@ public partial class UserAccount : IdentityUser<long>
 
     public bool IsActive { get; set; }
 
-   
+
+    public virtual ICollection<GreetingCard> GreetingCards { get; set; }
 
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
