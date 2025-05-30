@@ -19,3 +19,7 @@ public class CustomerDesign
 
     public virtual Product? Product { get; set; }
 }
+
+
+
+

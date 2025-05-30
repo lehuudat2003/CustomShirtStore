@@ -33,8 +33,13 @@
   <ItemGroup>
     <Folder Include="wwwroot\images\customerdesign\" />
     <Folder Include="wwwroot\images\Icon\" />
+    <Folder Include="wwwroot\images\design\" />
     <Folder Include="wwwroot\images\products\" />
     <Folder Include="wwwroot\image\" />
+    <Folder Include="wwwroot\uploads\images\" />
+    <Folder Include="wwwroot\uploads\backgrounds\" />
+    <Folder Include="wwwroot\uploads\audio\" />
+    <Folder Include="wwwroot\uploads\notes\" />
   </ItemGroup>
 
 </Project>

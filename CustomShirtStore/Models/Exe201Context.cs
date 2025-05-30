@@ -26,6 +26,8 @@ public partial class Exe201Context : IdentityDbContext<
     public virtual DbSet<CustomerDesign> CustomerDesigns { get; set; }
 
     public virtual DbSet<Font> Fonts { get; set; }
+    public virtual DbSet<BirthdayCard>  BirthdayCards { get; set; }
+    public virtual DbSet<GreetingCard> GreetingCards  { get; set; }
 
     public virtual DbSet<Order> Orders { get; set; }
 
@@ -120,6 +122,63 @@ public partial class Exe201Context : IdentityDbContext<
             entity.Property(e => e.UpdatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnName("updatedAt");
+        });
+        modelBuilder.Entity<BirthdayCard>(entity =>
+        {
+            entity.ToTable("BirthdayCard");
+
+            entity.HasKey(e => e.Id);
+
+            entity.Property(e => e.Id)
+                .HasColumnName("id");
+
+            entity.Property(e => e.Recipient)
+                .IsRequired()
+                .HasMaxLength(255)
+                .HasColumnName("recipient");
+
+            entity.Property(e => e.Sender)
+                .IsRequired()
+                .HasMaxLength(255)
+                .HasColumnName("sender");
+
+            entity.Property(e => e.Message1)
+                .HasMaxLength(1000)
+                .HasColumnName("message1");
+
+            entity.Property(e => e.Message2)
+                .HasMaxLength(1000)
+                .HasColumnName("message2");
+
+            entity.Property(e => e.Message3)
+                .HasMaxLength(1000)
+                .HasColumnName("message3");
+
+            entity.Property(e => e.CenterMessage)
+                .HasMaxLength(1000)
+                .HasColumnName("centerMessage");
+
+            entity.Property(e => e.ImagePath)
+                .HasMaxLength(255)
+                .HasColumnName("imagePath");
+
+            entity.Property(e => e.BackgroundImagePath)
+                .HasMaxLength(255)
+                .HasColumnName("backgroundImagePath");
+
+            entity.Property(e => e.NoteImagePath)
+                .HasMaxLength(255)
+                .HasColumnName("noteImagePath");
+
+            entity.Property(e => e.AudioPath)
+                .HasMaxLength(255)
+                .HasColumnName("audioPath");
+
+            // Ignore upload-only properties
+            entity.Ignore(e => e.ImageUpload);
+            entity.Ignore(e => e.BackgroundImageUpload);
+            entity.Ignore(e => e.NoteImageUpload);
+            entity.Ignore(e => e.AudioUpload);
         });
 
         modelBuilder.Entity<Order>(entity =>
@@ -256,6 +315,61 @@ public partial class Exe201Context : IdentityDbContext<
 
             entity.Property(e => e.IsActive)
                 .HasColumnName("isActive");
+        });
+        modelBuilder.Entity<GreetingCard>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("greeting_card_id_primary");
+
+            entity.ToTable("GreetingCard");
+
+            entity.Property(e => e.Id)
+                .ValueGeneratedOnAdd()
+                .HasColumnName("id");
+
+            entity.Property(e => e.Title)
+                .IsRequired()
+                .HasMaxLength(255)
+                .HasColumnName("title");
+
+            entity.Property(e => e.Message)
+                .HasMaxLength(1000)
+                .HasColumnName("message");
+
+            entity.Property(e => e.ImagePath)
+                .HasMaxLength(255)
+                .HasColumnName("imagePath");
+
+            entity.Property(e => e.NoteImagePath)
+                .HasMaxLength(255)
+                .HasColumnName("noteImagePath");
+
+            entity.Property(e => e.AudioPath)
+                .HasMaxLength(255)
+                .HasColumnName("audioPath");
+
+            entity.Property(e => e.VideoPath)
+                .HasMaxLength(255)
+                .HasColumnName("videoPath");
+
+            entity.Property(e => e.Sender)
+                .HasMaxLength(100)
+                .HasColumnName("sender");
+
+            entity.Property(e => e.Receiver)
+                .HasMaxLength(100)
+                .HasColumnName("receiver");
+
+            entity.Property(e => e.CreatedAt)
+                .HasColumnName("createdAt")
+                .HasDefaultValueSql("GETDATE()"); // SQL Server default value
+
+            entity.Property(e => e.UserId)
+                .HasColumnName("userId");
+
+            entity.HasOne(e => e.User)
+                .WithMany(u => u.GreetingCards)
+                .HasForeignKey(e => e.UserId)
+                .HasConstraintName("FK_GreetingCard_UserAccount");
         });
 
 
