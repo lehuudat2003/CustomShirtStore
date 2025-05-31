@@ -95,11 +95,20 @@ public partial class Exe201Context : IdentityDbContext<
             entity.Property(e => e.CreatedAt)
                 .HasColumnName("createdAt");
 
+            entity.Property(e => e.OrderItemId)
+                .HasColumnName("orderItemId");
+
             entity.HasOne(d => d.Product)
                 .WithMany(p => p.CustomerDesigns)
                 .HasForeignKey(d => d.ProductId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("customerdesign_productid_foreign");
+
+            entity.HasOne(d => d.OrderItem) // Assuming CustomerDesign has a navigation property for OrderItem
+        .WithMany(oi => oi.CustomerDesigns) // Assuming OrderItem has a CustomerDesigns collection
+        .HasForeignKey(d => d.OrderItemId)
+        .OnDelete(DeleteBehavior.ClientSetNull)
+        .HasConstraintName("customerdesign_orderitemid_foreign");
         });
 
 

@@ -23,7 +23,7 @@ public partial class OrderItem
 
     public long OrderId { get; set; }
 
-    public long FontId { get; set; }
+    public long? FontId { get; set; }
 
     public long Quantity { get; set; }
 

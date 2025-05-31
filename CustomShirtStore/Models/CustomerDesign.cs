@@ -17,8 +17,9 @@ public class CustomerDesign
     public decimal Price { get; set; }
     public string? QrCodeImagePath { get; set; }
     public DateTime CreatedAt { get; set; }
-
+    public long? OrderItemId { get; set; }
     public virtual Product? Product { get; set; }
+    public virtual OrderItem? OrderItem { get; set; }
 }
 
 

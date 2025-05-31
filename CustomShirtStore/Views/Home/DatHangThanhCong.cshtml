@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Thanh Toán Thành Công";
+}
+
+<div class="container py-5">
+    <div class="card shadow-lg border-0 mx-auto" style="max-width: 600px;">
+        <div class="card-body text-center">
+            <i class="fas fa-check-circle fa-3x text-success mb-3"></i>
+            <h2 class="card-title fw-bold mb-4">Cảm Ơn Quý Khách!</h2>
+            <p class="card-text lead mb-3">Đơn hàng của quý khách đã được xử lý thành công.</p>
+            <p class="card-text text-muted mb-4">Chúng tôi trân trọng sự ủng hộ của quý khách và hy vọng quý khách hài lòng với sản phẩm!</p>
+
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <a href="@Url.Action("ProductList", "Product")" class="btn btn-primary btn-lg">
+                    <i class="fas fa-shopping-cart me-2"></i> Mua Thêm Sản Phẩm
+                </a>
+                <a href="@Url.Action("Index", "Home")" class="btn btn-outline-secondary btn-lg">
+                    <i class="fas fa-home me-2"></i> Về Trang Chủ
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

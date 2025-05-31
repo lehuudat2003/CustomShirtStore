@@ -111,7 +111,7 @@ namespace CustomShirtStore.Controllers
 
             // Thêm vào session cart
             var product = _context.Products.FirstOrDefault(p => p.ProductId == model.Design.ProductId);
-
+            int newDesignId = (int)model.Design.Id;
             var cartItem = new CartItem
             {
                 ProductId = (int)model.Design.ProductId,
@@ -120,7 +120,8 @@ namespace CustomShirtStore.Controllers
                 Color = model.Design.Color,
                 DesignImageUrl = designImageUrl,
                 Price = product?.BasePrice ?? 0,
-                Quantity = 1
+                Quantity = 1,
+                GeneratedId = newDesignId
             };
 
             List<CartItem> cart = HttpContext.Session.GetObject<List<CartItem>>("Cart") ?? new List<CartItem>();

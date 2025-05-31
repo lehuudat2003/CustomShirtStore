@@ -20,8 +20,6 @@ namespace CustomShirtStore.Controllers
         }
         [Authorize(Roles = "Admin")]
         public IActionResult DoanhThu() { 
-
-
             return View(); 
         }
 
@@ -51,10 +49,10 @@ namespace CustomShirtStore.Controllers
         public async Task<IActionResult> ChiTietDonHang(int orderId)
         {
             var order = await _context.Orders
-    .Include(o => o.OrderItems)
-        .ThenInclude(oi => oi.CustomerDesigns)
+            .Include(o => o.OrderItems)
+            .ThenInclude(oi => oi.CustomerDesigns)
             .ThenInclude(cd => cd.Product)
-    .FirstOrDefaultAsync(o => o.Id == orderId);
+            .FirstOrDefaultAsync(o => o.Id == orderId);
 
 
             if (order == null)
@@ -79,7 +77,8 @@ namespace CustomShirtStore.Controllers
                     LinkMessage = $"/Message/{oi.Id}",
                     Quantity = (int)oi.Quantity,
                     ItemPriceFormatted = string.Format("{0:N0} VND", oi.ItemPrice),
-                    Size = oi.Size
+                    Size = oi.Size,
+                    QRImageUrl = oi.CustomerDesigns.FirstOrDefault()?.QrCodeImagePath ?? string.Empty
                 }
                 ).ToList()
             };
