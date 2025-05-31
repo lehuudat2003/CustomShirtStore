@@ -18,6 +18,7 @@ namespace CustomShirtStore.ViewModels
             public long OrderItemId { get; set; }
             public string ProductName { get; set; }
             public string DesignImageUrl { get; set; } // From CustomerDesign or Product
+            public string QRImageUrl { get; set; }
             public int Quantity { get; set; } // Adjusted from long to int
             public string LinkMessage { get; set; }
             public string ItemPriceFormatted { get; set; }
