@@ -15,7 +15,7 @@ namespace CustomShirtStore.Controllers
         public IActionResult ProductList()
         {
             var products = _context.Products
-                .Where(p => p.IsActive && p.Category == "Áo Thun")
+                .Where(p => p.IsActive)
                 .ToList();
 
             return View(products);
