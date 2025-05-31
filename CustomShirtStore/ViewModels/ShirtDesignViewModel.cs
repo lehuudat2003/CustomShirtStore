@@ -8,6 +8,9 @@ namespace CustomShirtStore.ViewModels
         public List<string> AvailableColors { get; set; } = new();
         public List<string> Sizes { get; set; } = new() { "XS", "S", "M", "L", "XL", "XXL", "XXXL", "XXXXL", "XXXXXL" };
         public CustomerDesign Design { get; set; } = new();
+        public List<BirthdayCard> AvailableMessages { get; set; }
+        public int? SelectedMessageId { get; set; } // ID được chọn
+
     }
 
 }

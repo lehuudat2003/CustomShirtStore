@@ -53,45 +53,45 @@ h4 {
   text-align: center;
 }
 .top-right {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  color: #728e98;
-  font-size: 90%;
+    position: absolute;
+    top: 12px;
+    right: 65px;
+    color: #728e98;
+    font-size: 90%;
 }
 
 .top-left {
-  position: absolute;
-  top: 132px;
-  right: 29px;
-  color: #6c7c6b;
-  font-size: 80%;
+    position: absolute;
+    top: 101px;
+    right: 38px;
+    color: #6c7c6b;
+    font-size: 80%;
 }
 .center {
-  position: absolute;
-  bottom: 115px;
-  left: 250px;
-  color: #6c7c6b;
-  font-size: 80%;
+    position: absolute;
+    bottom: 95px;
+    left: 211px;
+    color: #6c7c6b;
+    font-size: 80%;
 }
 .and {
-  position: absolute;
-  bottom: 160px;
-  left: 240px;
-  color: #6c7c6b;
-  font-size: 80%;
+    position: absolute;
+    bottom: 133px;
+    left: 197px;
+    color: #6c7c6b;
+    font-size: 80%;
 }
 
 .bottom-right {
-  position: absolute;
-  bottom: 253px;
-  right: 20px;
-  color: #6c7c6b;
-  font-size: 80%;
+    position: absolute;
+    bottom: 209px;
+    right: 20px;
+    color: #6c7c6b;
+    font-size: 80%;
 }
 .bottom-left {
-  position: absolute;
-  bottom: 5px;
-  left: 270px;
-  color: #b78690;
+    position: absolute;
+    bottom: 5px;
+    left: 193px;
+    color: #b78690;
 }

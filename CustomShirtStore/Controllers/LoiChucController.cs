@@ -92,5 +92,24 @@ namespace CustomShirtStore.Controllers
                 return View(card);
             }
         }
+        public async Task<IActionResult> List()
+        {
+            var cards = await _context.BirthdayCards
+                .OrderByDescending(c => c.Id)
+                .ToListAsync();
+
+            return View(cards);
+        }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var card = await _context.BirthdayCards.FirstOrDefaultAsync(c => c.Id == id);
+            if (card == null)
+                return NotFound();
+
+            return View(card);
+        }
+
+
     }
 }

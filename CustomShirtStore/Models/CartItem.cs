@@ -7,6 +7,7 @@
         public string? Size { get; set; }
         public string? Color { get; set; }
         public string? DesignImageUrl { get; set; }
+        public string? QrCodeImageUrl { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
     }
