@@ -1,0 +1,31 @@
+﻿@model IEnumerable<CustomShirtStore.Models.BirthdayCard>
+
+@{
+    ViewData["Title"] = "Danh sách lời chúc sinh nhật";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Người nhận</th>
+            <th>Người gửi</th>
+            <th>Lời chúc chính</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var card in Model)
+        {
+            <tr>
+                <td>@card.Recipient</td>
+                <td>@card.Sender</td>
+                <td>@card.CenterMessage</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@card.Id" class="btn btn-info">Xem</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

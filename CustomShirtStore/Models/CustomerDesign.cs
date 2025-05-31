@@ -15,6 +15,7 @@ public class CustomerDesign
     public string? UploadedImagePath { get; set; }
     public string? Size { get; set; }
     public decimal Price { get; set; }
+    public string? QrCodeImagePath { get; set; }
     public DateTime CreatedAt { get; set; }
 
     public virtual Product? Product { get; set; }

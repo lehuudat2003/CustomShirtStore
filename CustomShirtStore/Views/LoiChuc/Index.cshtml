@@ -9,14 +9,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="~/css/bootstrap.css" />
-    <link rel="stylesheet" href="~/css/css01.css" />
+    <link rel="stylesheet" href="~/css1/bootstrap.css" />
+    <link rel="stylesheet" href="~/css1/css01.css" />
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Pacifico|Nunito+Sans" rel="stylesheet" />
 </head>
 <body>
+   
+
     <div class="container-fluid">
         <div class="jumbotron img_banner_hpbd">
             <div class="text-center text-danger bg-danger">
+              
                 <h1>TO: @Model.Recipient</h1>
             </div>
         </div>
@@ -24,8 +27,15 @@
 
     <div class="container">
         <div class="row">
+            <a asp-controller="LoiChuc" asp-action="Create" class="btn btn-success">
+                ✨ Tạo lời chúc mới
+            </a>
+            <a asp-controller="LoiChuc" asp-action="List" class="btn btn-success">
+                ✨ Danh sách lời chúc
+            </a>
             <div class="col-xs-4 col-md-4 col-sm-4"><p style="padding-top: 5px"></p></div>
             <div id="bond" class="col-xs-8 col-md-8 col-sm-8 text-center">
+               
                 <img data-toggle="modal" data-target="#myModal"
                      class="media-object img-responsive img-thumbnail bg-snow-tranparent-hidden"
                      src="@Model.BackgroundImagePath"
@@ -33,7 +43,7 @@
             </div>
         </div>
     </div>
-
+  
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -53,7 +63,7 @@
 
                     <h1 class="heading text-danger bg-danger">
                         <div class="containeri">
-                            <img class="img img-responsive" src="@Model.NoteImagePath" alt="Note" />
+                            <img class="img img-responsive" src="~/img/Snowmen-and-Sledding-Thank-You-Note.jpg.png" alt="Note" />
                             <p class="top-right">@Model.Recipient</p>
                             <p class="bottom-right">@Model.Message2</p>
                             <p class="top-left">@Model.Message1</p>

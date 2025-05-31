@@ -1,7 +1,7 @@
 ﻿@model CustomShirtStore.Models.BirthdayCard
 
 @{
-    ViewData["Title"] = "Tạo thiệp chúc mừng sinh nhật";
+    ViewData["Title"] = "Tạo Thiệp Sinh Nhật";
 }
 
 <h2>@ViewData["Title"]</h2>
@@ -12,38 +12,38 @@
     <div asp-validation-summary="All" class="text-danger"></div>
 
     <div class="form-group">
-        <label asp-for="Recipient" class="control-label"></label>
-        <input asp-for="Recipient" class="form-control" />
+        <label asp-for="Recipient" class="control-label">Gửi tới (tối đa 30 ký tự)</label>
+        <input asp-for="Recipient" class="form-control" maxlength="30" />
         <span asp-validation-for="Recipient" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="Sender" class="control-label"></label>
-        <input asp-for="Sender" class="form-control" />
+        <label asp-for="Sender" class="control-label">Người gửi (tối đa 25 ký tự)</label>
+        <input asp-for="Sender" class="form-control" maxlength="25" />
         <span asp-validation-for="Sender" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="Message1" class="control-label"></label>
-        <textarea asp-for="Message1" class="form-control"></textarea>
+        <label asp-for="Message1" class="control-label">Lời chúc dòng 1 (tối đa 35 ký tự)</label>
+        <textarea asp-for="Message1" class="form-control" maxlength="35" rows="2"></textarea>
         <span asp-validation-for="Message1" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="Message2" class="control-label"></label>
-        <textarea asp-for="Message2" class="form-control"></textarea>
+        <label asp-for="Message2" class="control-label">Lời chúc dòng 2 (tối đa 30 ký tự)</label>
+        <textarea asp-for="Message2" class="form-control" maxlength="30" rows="2"></textarea>
         <span asp-validation-for="Message2" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="Message3" class="control-label"></label>
-        <textarea asp-for="Message3" class="form-control"></textarea>
+        <label asp-for="Message3" class="control-label">Lời chúc dòng 3 (tối đa 35 ký tự)</label>
+        <textarea asp-for="Message3" class="form-control" maxlength="35" rows="2"></textarea>
         <span asp-validation-for="Message3" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="CenterMessage" class="control-label"></label>
-        <textarea asp-for="CenterMessage" class="form-control"></textarea>
+        <label asp-for="CenterMessage" class="control-label">Dòng cuối (tối đa 40 ký tự)</label>
+        <textarea asp-for="CenterMessage" class="form-control" maxlength="40" rows="2"></textarea>
         <span asp-validation-for="CenterMessage" class="text-danger"></span>
     </div>
 

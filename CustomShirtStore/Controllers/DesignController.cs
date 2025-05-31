@@ -8,6 +8,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Hosting;
 using CustomShirtStore.Extensions;
 using System.Text.RegularExpressions;
+using QRCoder;
 
 namespace CustomShirtStore.Controllers
 {
@@ -30,11 +31,13 @@ namespace CustomShirtStore.Controllers
             var model = new ShirtDesignViewModel
             {
                 Product = product,
-                AvailableColors = product.Color?.Split(',').Select(c => c.Trim().ToLower()).ToList() ?? new List<string>()
+                AvailableColors = product.Color?.Split(',').Select(c => c.Trim().ToLower()).ToList() ?? new List<string>(),
+                AvailableMessages = _context.BirthdayCards.ToList() // 👈 Lấy danh sách từ DB
             };
 
             return View(model);
         }
+
         [HttpGet("/images/icons-list")]
         public IActionResult GetIconImages()
         {
@@ -53,6 +56,18 @@ namespace CustomShirtStore.Controllers
         public async Task<IActionResult> SaveDesign(ShirtDesignViewModel model, IFormFile? uploadedImage, string? DesignImageBase64)
         {
             string? designImageUrl = null;
+            if (model.SelectedMessageId.HasValue)
+            {
+                var message = await _context.BirthdayCards.FindAsync(model.SelectedMessageId.Value);
+                if (message != null)
+                {
+                    var link = Url.Action("Details", "LoiChuc", new { id = message.Id }, Request.Scheme);
+                    string qrPath = await GenerateAndSaveQrCodeAsync(link, message.Id);
+
+                    // ✅ Gán đường dẫn QR vào model.Design
+                    model.Design.QrCodeImagePath = qrPath;
+                }
+            }
 
             // Nếu có ảnh base64 từ canvas
             if (!string.IsNullOrEmpty(DesignImageBase64))
@@ -115,6 +130,43 @@ namespace CustomShirtStore.Controllers
             return RedirectToAction("Index", "Cart");
         }
 
+        private async Task<string> GenerateAndSaveQrCodeAsync(string text, int messageId)
+        {
+            using var qrGenerator = new QRCodeGenerator();
+            var qrCodeData = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
+            using var qrCode = new PngByteQRCode(qrCodeData);
+            var qrBytes = qrCode.GetGraphic(20);
+
+            var fileName = $"qr_{messageId}.png";
+            var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/QR");
+
+            if (!Directory.Exists(folderPath))
+                Directory.CreateDirectory(folderPath);
+
+            var filePath = Path.Combine(folderPath, fileName);
+            await System.IO.File.WriteAllBytesAsync(filePath, qrBytes);
+
+            return "/QR/" + fileName;
+        }
+
+        public IActionResult CreateDesign(int productId)
+        {
+            var vm = new ShirtDesignViewModel
+            {
+                Product = _context.Products.Find(productId),
+                AvailableColors = new List<string> { "red", "blue", "black" },
+                Sizes = new List<string> { "S", "M", "L", "XL" },
+                AvailableMessages = _context.BirthdayCards
+                    .Select(x => new BirthdayCard
+                    {
+                        Id = x.Id,
+                        Recipient = x.Recipient,
+                        Sender = x.Sender
+                    }).ToList()
+            };
+
+            return View(vm);
+        }
 
     }
 

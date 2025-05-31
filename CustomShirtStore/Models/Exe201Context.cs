@@ -60,7 +60,10 @@ public partial class Exe201Context : IdentityDbContext<
 
             entity.Property(e => e.UserId)
                 .HasMaxLength(255)
-                .HasColumnName("userId");
+                .HasColumnName("userId"); 
+            entity.Property(e => e.QrCodeImagePath)
+                .HasMaxLength(255)
+                .HasColumnName("qrCodeImagePath");
 
             entity.Property(e => e.ProductId)
                 .HasColumnName("productId");
