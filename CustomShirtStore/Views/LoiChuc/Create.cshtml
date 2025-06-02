@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Tạo Thiệp Sinh Nhật";
+
 }
 
 <h2>@ViewData["Title"]</h2>
@@ -74,8 +75,24 @@
     <button type="submit" class="btn btn-primary">Lưu thiệp</button>
 </form>
 
+@* @section Scripts { *@
+
+
+
+
+@*     @{ *@
+@*         await Html.RenderPartialAsync("_ValidationScriptsPartial"); *@
+@*     } *@
+
+@* } *@
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script src="https://app.preny.ai/embed-global.js"
+            data-button-style="width:200px;height:200px"
+            async
+            defer
+            data-preny-bot-id="683d6c8174eba92b8e0ba13c">
+    </script>
 }
+
