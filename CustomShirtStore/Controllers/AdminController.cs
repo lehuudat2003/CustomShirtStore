@@ -162,6 +162,184 @@ namespace CustomShirtStore.Controllers
 
             return RedirectToAction("DonHang");
         }
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> SanPham()
+        {
+            var products = await _context.Products.ToListAsync();
+            return View(products);
+        }
+
+        [Authorize(Roles = "Admin")]
+        public IActionResult ThemSanPham()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ThemSanPham(
+            [Bind("ProductName,Description,BasePrice,Quantity,Color,Category,IsActive")] Product product,
+            IFormFile ImageUpload)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    if (ImageUpload != null && ImageUpload.Length > 0)
+                    {
+                        // Optional: Limit file size (e.g., 5MB)
+                        const long maxFileSize = 5 * 1024 * 1024;
+                        if (ImageUpload.Length > maxFileSize)
+                        {
+                            ModelState.AddModelError("", "Ảnh quá lớn (tối đa 5MB).");
+                            return View(product);
+                        }
+
+                        var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/products");
+                        if (!Directory.Exists(uploadsFolder))
+                        {
+                            Directory.CreateDirectory(uploadsFolder);
+                        }
+
+                        var fileExt = Path.GetExtension(ImageUpload.FileName);
+                        var allowedExts = new[] { ".jpg", ".jpeg", ".png", ".gif", ".webp" };
+                        if (!allowedExts.Contains(fileExt.ToLower()))
+                        {
+                            ModelState.AddModelError("", "Chỉ cho phép các định dạng ảnh: jpg, jpeg, png, gif, webp.");
+                            return View(product);
+                        }
+
+                        var fileName = Guid.NewGuid() + fileExt;
+                        var filePath = Path.Combine(uploadsFolder, fileName);
+
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await ImageUpload.CopyToAsync(stream);
+                        }
+
+                        product.ImageUrl = "/images/products/" + fileName;
+                    }
+
+                    _context.Products.Add(product);
+                    await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Thêm sản phẩm thành công.";
+                    return RedirectToAction("SanPham");
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", "Lỗi khi upload ảnh: " + ex.Message);
+                }
+            }
+            return View(product);
+        }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> SuaSanPham(long id)
+        {
+            var product = await _context.Products.FindAsync(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            return View(product);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SuaSanPham(
+            long id,
+            [Bind("ProductId,ProductName,Description,BasePrice,Quantity,Color,ImageUrl,Category,IsActive")] Product product,
+            IFormFile ImageUpload)
+        {
+            if (id != product.ProductId)
+            {
+                return NotFound();
+            }
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    // Get the existing product from the database
+                    var existingProduct = await _context.Products.FindAsync(id);
+                    if (existingProduct == null)
+                    {
+                        return NotFound();
+                    }
+
+                    // Update properties
+                    existingProduct.ProductName = product.ProductName;
+                    existingProduct.Description = product.Description;
+                    existingProduct.BasePrice = product.BasePrice;
+                    existingProduct.Quantity = product.Quantity;
+                    existingProduct.Color = product.Color;
+                    existingProduct.Category = product.Category;
+                    existingProduct.IsActive = product.IsActive;
+
+                    // Handle image upload
+                    if (ImageUpload != null && ImageUpload.Length > 0)
+                    {
+                        // Optional: Limit file size (e.g., 5MB)
+                        const long maxFileSize = 5 * 1024 * 1024;
+                        if (ImageUpload.Length > maxFileSize)
+                        {
+                            ModelState.AddModelError("", "Ảnh quá lớn (tối đa 5MB).");
+                            return View(product);
+                        }
+
+                        var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/products");
+                        if (!Directory.Exists(uploadsFolder))
+                        {
+                            Directory.CreateDirectory(uploadsFolder);
+                        }
+
+                        var fileExt = Path.GetExtension(ImageUpload.FileName);
+                        var allowedExts = new[] { ".jpg", ".jpeg", ".png", ".gif", ".webp" };
+                        if (!allowedExts.Contains(fileExt.ToLower()))
+                        {
+                            ModelState.AddModelError("", "Chỉ cho phép các định dạng ảnh: jpg, jpeg, png, gif, webp.");
+                            return View(product);
+                        }
+
+                        var fileName = Guid.NewGuid() + fileExt;
+                        var filePath = Path.Combine(uploadsFolder, fileName);
+
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await ImageUpload.CopyToAsync(stream);
+                        }
+
+                        existingProduct.ImageUrl = "/images/products/" + fileName;
+                    }
+
+                    _context.Update(existingProduct);
+                    await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Cập nhật sản phẩm thành công.";
+                    return RedirectToAction("SanPham");
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", "Lỗi khi upload ảnh: " + ex.Message);
+                }
+            }
+            return View(product);
+        }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> XoaSanPham(long id)
+        {
+            var product = await _context.Products.FindAsync(id);
+            if (product == null)
+            {
+                TempData["ErrorMessage"] = "Sản phẩm không tồn tại.";
+                return RedirectToAction("SanPham");
+            }
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
+            TempData["SuccessMessage"] = "Xóa sản phẩm thành công.";
+            return RedirectToAction("SanPham");
+        }
 
 
     }

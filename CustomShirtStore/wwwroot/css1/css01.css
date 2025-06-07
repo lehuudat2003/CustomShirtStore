@@ -57,7 +57,7 @@ h4 {
     top: 12px;
     right: 65px;
     color: #728e98;
-    font-size: 90%;
+    font-size: 49%;
 }
 
 .top-left {
@@ -65,21 +65,21 @@ h4 {
     top: 101px;
     right: 38px;
     color: #6c7c6b;
-    font-size: 80%;
+    font-size: 49%;
 }
 .center {
     position: absolute;
     bottom: 95px;
     left: 211px;
     color: #6c7c6b;
-    font-size: 80%;
+    font-size: 49%;
 }
 .and {
     position: absolute;
     bottom: 133px;
     left: 197px;
     color: #6c7c6b;
-    font-size: 80%;
+    font-size: 49%;
 }
 
 .bottom-right {
@@ -87,7 +87,7 @@ h4 {
     bottom: 209px;
     right: 20px;
     color: #6c7c6b;
-    font-size: 80%;
+    font-size: 49%;
 }
 .bottom-left {
     position: absolute;

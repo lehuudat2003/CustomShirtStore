@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<CustomShirtStore.Models.Product>
+@{
+    ViewData["Title"] = "Quản lý sản phẩm";
+}
+<h2>Quản lý sản phẩm</h2>
+<a asp-action="ThemSanPham" class="btn btn-primary">Thêm sản phẩm</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Hình ảnh</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.ImageUrl))
+                    {
+                        <img src="@item.ImageUrl" alt="Ảnh sản phẩm" style="max-width: 80px; max-height: 80px;" />
+                    }
+                    else
+                    {
+                        <span>Không có ảnh</span>
+                    }
+                </td>
+            <td>@item.ProductName</td>
+                <td>@item.BasePrice.ToString("N0") VND</td>
+            <td>
+                <a asp-action="SuaSanPham" asp-route-id="@item.ProductId" class="btn btn-warning btn-sm">Sửa</a>
+                <a asp-action="XoaSanPham" asp-route-id="@item.ProductId" class="btn btn-danger btn-sm"
+                   onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này?');">Xóa</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
